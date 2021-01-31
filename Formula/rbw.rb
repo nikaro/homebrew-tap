@@ -5,6 +5,11 @@ class Rbw < Formula
   sha256 "5ab3c569ea55eeee6e70130c3d1a3399ac0529b666e2ba12264c1a7b0b5dbc3c"
   license "MIT"
 
+  bottle do
+    root_url "https://github.com/nikaro/homebrew-tap/releases/download/rbw-0.5.2"
+    sha256 cellar: :any, catalina: "7548b82ab09a5f24f5e05c78da87e417f502329898d7e3c86f87364d85df138d"
+  end
+
   depends_on "rust" => :build
   depends_on "openssl@1.1"
   depends_on "pinentry"
