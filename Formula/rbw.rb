@@ -6,8 +6,8 @@ class Rbw < Formula
   license "MIT"
 
   bottle do
-    root_url "https://github.com/nikaro/homebrew-tap/releases/download/rbw-0.5.2"
-    sha256 cellar: :any, catalina: "7548b82ab09a5f24f5e05c78da87e417f502329898d7e3c86f87364d85df138d"
+    root_url "https://github.com/nikaro/homebrew-tap/releases/download/rbw-1.2.0"
+    sha256 cellar: :any_skip_relocation, catalina: "5f5b4d6a7bedea4f0fe29b6203ea582f0da3e40e8c5c1699ef0c724b8e4c5b22"
   end
 
   depends_on "rust" => :build
