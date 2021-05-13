@@ -7,6 +7,11 @@ class ResumePycli < Formula
   sha256 "903584b56738f0f94423e6047ba06e67ce5080401884a5960ec9edb0b59815d3"
   license "GPL-3.0-or-later"
 
+  bottle do
+    root_url "https://github.com/nikaro/homebrew-tap/releases/download/resume-pycli-1.1.0"
+    sha256 cellar: :any_skip_relocation, catalina: "dab1536d02988003e777f361c2265b4ff59cc50380f1cc49f15395b1461edc82"
+  end
+
   depends_on "python@3.9"
 
   resource "attrs" do
