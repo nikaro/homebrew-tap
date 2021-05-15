@@ -3,8 +3,8 @@ class ResumePycli < Formula
 
   desc "CLI tool to easily setup a new resume"
   homepage "https://sr.ht/~nka/resume-pycli"
-  url "https://files.pythonhosted.org/packages/73/fd/83686d595efb8e6dc56d932fd5fb4c006e2c2b1410ec77ec0fa00517a5a6/resume-pycli-1.1.0.tar.gz"
-  sha256 "903584b56738f0f94423e6047ba06e67ce5080401884a5960ec9edb0b59815d3"
+  url "https://files.pythonhosted.org/packages/4f/fd/32859947c51482b827a6b72ea465f31d6b63019947280ea60129448c7cfa/resume-pycli-1.1.1.tar.gz"
+  sha256 "2fc4e301129953d3439c492444f3ea0e5e8ac125aca08099de26bbc0820ef84b"
   license "GPL-3.0-or-later"
 
   bottle do
@@ -20,13 +20,13 @@ class ResumePycli < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/27/6f/be940c8b1f1d69daceeb0032fee6c34d7bd70e3e649ccac0951500b4720e/click-7.1.2.tar.gz"
-    sha256 "d2b5255c7c6349bc1bd1e59e08cd12acbbd63ce649f2588755783aa94dfb6b1a"
+    url "https://files.pythonhosted.org/packages/d5/99/286fd2fdfb501620a9341319ba47444040c7b3094d3b6c797d7281469bf8/click-8.0.0.tar.gz"
+    sha256 "7d8c289ee437bcb0316820ccee14aefcb056e58d31830ecab8e47eda6540e136"
   end
 
   resource "Jinja2" do
-    url "https://files.pythonhosted.org/packages/4f/e7/65300e6b32e69768ded990494809106f87da1d436418d5f1367ed3966fd7/Jinja2-2.11.3.tar.gz"
-    sha256 "a6d58433de0ae800347cab1fa3043cebbabe8baa9d29e668f1c768cb87a333c6"
+    url "https://files.pythonhosted.org/packages/7a/0c/23cbcf515b5394e9f59a3e6629f26e1142b92d474ee0725a26aa5a3bcf76/Jinja2-3.0.0.tar.gz"
+    sha256 "ea8d7dd814ce9df6de6a761ec7f1cac98afe305b8cdc4aaae4e114b8d8ce24c5"
   end
 
   resource "jsonschema" do
