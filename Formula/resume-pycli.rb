@@ -3,14 +3,9 @@ class ResumePycli < Formula
 
   desc "CLI tool to easily setup a new resume"
   homepage "https://sr.ht/~nka/resume-pycli"
-  url "https://files.pythonhosted.org/packages/d7/8b/9ba540964394ff6e5fd77f5fb37247eeb93ad97371dc7abb465e95172a88/resume-pycli-1.1.2.tar.gz"
-  sha256 "b541b698038c127816619a3824f09f0c0b87403250ae8faee1d35cd7c7e1289f"
+  url "https://files.pythonhosted.org/packages/29/26/929468ccf3952335f3c8eb19ca0b365b7c9656d51064e5484cc6eb82f18f/resume-pycli-1.1.3.tar.gz"
+  sha256 "e7ddb25fb0369af865786cf5db031959a537512f032b9a1b735cfda0c28d82c0"
   license "GPL-3.0-or-later"
-
-  bottle do
-    root_url "https://github.com/nikaro/homebrew-tap/releases/download/resume-pycli-1.1.2"
-    sha256 cellar: :any_skip_relocation, catalina: "ca37ff1ea69fc607466ba1a9650de76aff54e35b19c10ca12d7f4dd5b6bf752e"
-  end
 
   depends_on "python@3.9"
 
