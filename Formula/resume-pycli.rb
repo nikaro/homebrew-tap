@@ -3,8 +3,8 @@ class ResumePycli < Formula
 
   desc "CLI tool to easily setup a new resume"
   homepage "https://sr.ht/~nka/resume-pycli"
-  url "https://files.pythonhosted.org/packages/29/26/929468ccf3952335f3c8eb19ca0b365b7c9656d51064e5484cc6eb82f18f/resume-pycli-1.1.3.tar.gz"
-  sha256 "e7ddb25fb0369af865786cf5db031959a537512f032b9a1b735cfda0c28d82c0"
+  url "https://files.pythonhosted.org/packages/12/75/d4f2a5323538b50dc4c9ff56578e02001159b858b565e88570e9d7d5f0fb/resume-pycli-1.2.0.tar.gz"
+  sha256 "4de76b08bbe1ee6d6f8a00070db44d2d3352a833750f387e87c2b9dcfc57f724"
   license "GPL-3.0-or-later"
 
   bottle do
@@ -59,6 +59,8 @@ class ResumePycli < Formula
   end
 
   test do
+    system "#{bin}/resume", "version"
     system "#{bin}/resume", "init"
+    system "#{bin}/resume", "validate"
   end
 end
