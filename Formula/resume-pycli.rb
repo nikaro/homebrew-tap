@@ -8,8 +8,8 @@ class ResumePycli < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    root_url "https://github.com/nikaro/homebrew-tap/releases/download/resume-pycli-1.1.3"
-    sha256 cellar: :any_skip_relocation, catalina: "c0c97c168a17c79e31232885c08f43568e4ba57ef51884b2feb966cbf779b9f9"
+    root_url "https://github.com/nikaro/homebrew-tap/releases/download/resume-pycli-1.2.0"
+    sha256 cellar: :any_skip_relocation, catalina: "2badefc08638ea8cf458fa9a8ad2292bb57a96b15d6a2f95b03444874b2b608a"
   end
 
   depends_on "python@3.9"
