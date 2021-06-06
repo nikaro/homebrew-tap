@@ -3,8 +3,8 @@ class ResumePycli < Formula
 
   desc "CLI tool to easily setup a new resume"
   homepage "https://sr.ht/~nka/resume-pycli"
-  url "https://files.pythonhosted.org/packages/75/7e/d844c55f585b188416e6c7ed887f206681c5e22025a0554c565923408b09/resume-pycli-1.3.0.tar.gz"
-  sha256 "eaf6747ea4b81c82f9344bbeeddb0b9694d7924f004d8e69fc0ff27304ef4d28"
+  url "https://files.pythonhosted.org/packages/5a/d9/4498a82739adaa030b1e58088aa9aead023f3ab402788d56237788082250/resume-pycli-1.3.2.tar.gz"
+  sha256 "0a08f92b7f83a90a1250b28140e1029b9b2d2617e3629b30103532b0a393b966"
   license "GPL-3.0-or-later"
 
   bottle do
@@ -17,6 +17,11 @@ class ResumePycli < Formula
   resource "attrs" do
     url "https://files.pythonhosted.org/packages/ed/d6/3ebca4ca65157c12bd08a63e20ac0bdc21ac7f3694040711f9fd073c0ffb/attrs-21.2.0.tar.gz"
     sha256 "ef6aaac3ca6cd92904cdd0d83f629a15f18053ec84e6432106f7a4d04ae4f5fb"
+  end
+
+  resource "beautifulsoup4" do
+    url "https://files.pythonhosted.org/packages/6b/c3/d31704ae558dcca862e4ee8e8388f357af6c9d9acb0cad4ba0fbbd350d9a/beautifulsoup4-4.9.3.tar.gz"
+    sha256 "84729e322ad1d5b4d25f805bfa05b902dd96450f43842c4e99067d5e1369eb25"
   end
 
   resource "click" do
@@ -52,6 +57,11 @@ class ResumePycli < Formula
   resource "six" do
     url "https://files.pythonhosted.org/packages/71/39/171f1c67cd00715f190ba0b100d606d440a28c93c7714febeca8b79af85e/six-1.16.0.tar.gz"
     sha256 "1e61c37477a1626458e36f7b1d82aa5c9b094fa4802892072e49de9c60c4c926"
+  end
+
+  resource "soupsieve" do
+    url "https://files.pythonhosted.org/packages/c8/3f/e71d92e90771ac2d69986aa0e81cf0dfda6271e8483698f4847b861dd449/soupsieve-2.2.1.tar.gz"
+    sha256 "052774848f448cf19c7e959adf5566904d525f33a3f8b6ba6f6f8f26ec7de0cc"
   end
 
   def install
