@@ -6,6 +6,11 @@ class Devc < Formula
   license "GPL-3.0-or-later"
   head "https://github.com/nikaro/devc.git"
 
+  bottle do
+    root_url "https://github.com/nikaro/homebrew-tap/releases/download/devc-1.0.0-alpha.3"
+    sha256 cellar: :any_skip_relocation, catalina: "b43e65cad0e604af4d4e6ffb6925c1328f09c65b0d85af6170023d1840cd8ee5"
+  end
+
   depends_on "go" => :build
 
   def install
