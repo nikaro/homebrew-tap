@@ -1,8 +1,8 @@
 class Devc < Formula
   desc "CLI tool to manage your devcontainers"
   homepage "https://github.com/nikaro/devc"
-  url "https://github.com/nikaro/devc/archive/v1.0.0-alpha.3.tar.gz"
-  sha256 "7f486bb847157eeea799ff5581e6f0dd0078d540745c1f10911ba79ff7880fff"
+  url "https://github.com/nikaro/devc/archive/v1.0.0-alpha.4.tar.gz"
+  sha256 "16e4ab7d9b4f445892745905a32d3b8f50b909b3a95f0c0af81c4e5e40e08b81"
   license "GPL-3.0-or-later"
   head "https://github.com/nikaro/devc.git"
 
