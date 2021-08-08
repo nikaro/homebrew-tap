@@ -7,8 +7,8 @@ class Devc < Formula
   head "https://github.com/nikaro/devc.git"
 
   bottle do
-    root_url "https://github.com/nikaro/homebrew-tap/releases/download/devc-1.0.0-alpha.3"
-    sha256 cellar: :any_skip_relocation, catalina: "b43e65cad0e604af4d4e6ffb6925c1328f09c65b0d85af6170023d1840cd8ee5"
+    root_url "https://github.com/nikaro/homebrew-tap/releases/download/devc-1.0.0-alpha.4"
+    sha256 cellar: :any_skip_relocation, catalina: "41de5870bd2956b8c0b556d4e5efd3ce29277887f34cd13ab6ce9cacf2e74fa6"
   end
 
   depends_on "go" => :build
