@@ -3,8 +3,8 @@ class ResumePycli < Formula
 
   desc "CLI tool to easily setup a new resume"
   homepage "https://sr.ht/~nka/resume-pycli"
-  url "https://files.pythonhosted.org/packages/01/f6/6c1637ee17ce229d8283c3de7965267745dca40cf9f7f7f32c5d539b61c8/resume-pycli-1.3.3.tar.gz"
-  sha256 "bc92ad8c9fa9ae18fda95243287ec7e90c03247110a7f6a249297ebc4e14bb9f"
+  url "https://files.pythonhosted.org/packages/f5/a8/f7074ca5c952100ca8186b9afbbb68c0075801991678eec6f6002b1a5293/resume-pycli-1.3.4.tar.gz"
+  sha256 "262ede0ab087933d8518b7f95ea5f4ae6f153d7e95b74dff3274ea6bb5daad00"
   license "GPL-3.0-or-later"
 
   bottle do
@@ -50,8 +50,8 @@ class ResumePycli < Formula
   end
 
   resource "pyrsistent" do
-    url "https://files.pythonhosted.org/packages/4d/70/fd441df751ba8b620e03fd2d2d9ca902103119616f0f6cc42e6405035062/pyrsistent-0.17.3.tar.gz"
-    sha256 "2e636185d9eb976a18a8a8e96efce62f2905fea90041958d8cc2a189756ebf3e"
+    url "https://files.pythonhosted.org/packages/f4/d7/0fa558c4fb00f15aabc6d42d365fcca7a15fcc1091cd0f5784a14f390b7f/pyrsistent-0.18.0.tar.gz"
+    sha256 "773c781216f8c2900b42a7b638d5b517bb134ae1acbebe4d1e8f1f41ea60eb4b"
   end
 
   resource "six" do
