@@ -4,15 +4,16 @@ cask "instantview" do
 
   url "https://www.siliconmotion.com/downloads/macOS_InstantView_#{version}.dmg"
   name "InstantView"
-  desc "Driver for Silicon Motion's SM76x USB display/docking station SoC."
+  desc "Driver for Silicon Motion's SM76x USB display/docking station SoC"
   homepage "https://www.siliconmotion.com/download/3Xf/a/index.html"
-  auto_updates true
 
   livecheck do
     url "https://www.siliconmotion.com/download/3Xf/a/index.html"
     strategy :page_match
     regex(%r{href=".*/macOS_InstantView_(V\d+\.\d+R\d+)\.dmg"}i)
   end
+
+  auto_updates true
 
   app "macOS InstantView.app"
 end
