@@ -6,6 +6,11 @@ class Wireproxy < Formula
   license "ISC"
   head "https://github.com/octeep/wireproxy.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/nikaro/homebrew-tap/releases/download/wireproxy-0878127360878"
+    sha256 cellar: :any_skip_relocation, big_sur: "1527cc4cd21bbde7e51fb60bd266a1a55955ae64189793e739830ca1ccd48239"
+  end
+
   depends_on "go" => :build
 
   def install
