@@ -1,8 +1,8 @@
 class Wireproxy < Formula
   desc "Wireguard client that exposes itself as a socks5 proxy or tunnels"
   homepage "https://github.com/octeep/wireproxy"
-  url "https://github.com/octeep/wireproxy/archive/db9c1a6885f12d1c3c685dfdece0878127360878.tar.gz"
-  sha256 "acba8c00c0633a5c1fb49531c59cb11af3ab7d436cf141078eb5e07d5a68a08f"
+  url "https://github.com/octeep/wireproxy/archive/refs/tags/v1.0.2.tar.gz"
+  sha256 "c03148266a8becc32e78a077db1b751b110be7326eda4081a07387b177cd740b"
   license "ISC"
   head "https://github.com/octeep/wireproxy.git", branch: "master"
 
@@ -16,7 +16,7 @@ class Wireproxy < Formula
   def install
     ENV["CGO_ENABLED"] = "0"
 
-    system "go", "build", *std_go_args
+    system "go", "build", *std_go_args, "./cmd/wireproxy"
   end
 
   test do
