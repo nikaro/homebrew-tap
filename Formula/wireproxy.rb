@@ -1,8 +1,8 @@
 class Wireproxy < Formula
   desc "Wireguard client that exposes itself as a socks5 proxy or tunnels"
   homepage "https://github.com/octeep/wireproxy"
-  url "https://github.com/octeep/wireproxy/archive/refs/tags/v1.0.2.tar.gz"
-  sha256 "c03148266a8becc32e78a077db1b751b110be7326eda4081a07387b177cd740b"
+  url "https://github.com/octeep/wireproxy/archive/refs/tags/v1.0.3.tar.gz"
+  sha256 "108175bff7e5158236acdd2a0b1fc129a799a52772885b8e835c5e84d24a7358"
   license "ISC"
   head "https://github.com/octeep/wireproxy.git", branch: "master"
 
