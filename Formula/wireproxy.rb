@@ -7,8 +7,8 @@ class Wireproxy < Formula
   head "https://github.com/octeep/wireproxy.git", branch: "master"
 
   bottle do
-    root_url "https://github.com/nikaro/homebrew-tap/releases/download/wireproxy-1.0.2"
-    sha256 cellar: :any_skip_relocation, big_sur: "e218fe415507f47fa5a62d8478264a4c78997a70d48d1a6a3949d7f34926b4f0"
+    root_url "https://github.com/nikaro/homebrew-tap/releases/download/wireproxy-1.0.3"
+    sha256 cellar: :any_skip_relocation, big_sur: "973a1a7931a3eefe080829602a705db43c2093e970745978e6150573cc3bf897"
   end
 
   depends_on "go" => :build
