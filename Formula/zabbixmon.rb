@@ -5,21 +5,21 @@
 class Zabbixmon < Formula
   desc "CLI application to show currents alerts on Zabbix"
   homepage "https://github.con/nikaro/zabbixmon"
-  version "0.3.1"
+  version "0.3.2"
   license "GPL-3.0-or-later"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/nikaro/zabbixmon/releases/download/v0.3.1/zabbixmon_0.3.1_darwin_arm64.tar.gz"
-      sha256 "781cda6e31f68dd982db1b49ac6ce1a70a7f472a08ab8fd37410332cb8336496"
+    if Hardware::CPU.intel?
+      url "https://github.com/nikaro/zabbixmon/releases/download/v0.3.2/zabbixmon_0.3.2_darwin_amd64.tar.gz"
+      sha256 "6d3c07a066870455f29fd8b784f46b1de8d13ddc228ebafa24937e3ae6e32562"
 
       def install
         bin.install "zabbixmon"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/nikaro/zabbixmon/releases/download/v0.3.1/zabbixmon_0.3.1_darwin_amd64.tar.gz"
-      sha256 "9b93ea8c17937c87754a216e747a9d73045cad4e61daf8c83d35f3dd60d222ea"
+    if Hardware::CPU.arm?
+      url "https://github.com/nikaro/zabbixmon/releases/download/v0.3.2/zabbixmon_0.3.2_darwin_arm64.tar.gz"
+      sha256 "bc8b8402ee77e2b0af866efa55856f62b78b5e160afffb143d5c6213a1718d0e"
 
       def install
         bin.install "zabbixmon"
@@ -28,17 +28,17 @@ class Zabbixmon < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/nikaro/zabbixmon/releases/download/v0.3.1/zabbixmon_0.3.1_linux_arm64.tar.gz"
-      sha256 "2db0aabcd2a9352336ef882f167fb6397ccc38eb3c1be9ff95e1e0b43c0f7003"
+    if Hardware::CPU.intel?
+      url "https://github.com/nikaro/zabbixmon/releases/download/v0.3.2/zabbixmon_0.3.2_linux_amd64.tar.gz"
+      sha256 "d213f689f7ce1c4c4db0f946b41d94b6502bd68eef39c717a228aa662e16faad"
 
       def install
         bin.install "zabbixmon"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/nikaro/zabbixmon/releases/download/v0.3.1/zabbixmon_0.3.1_linux_amd64.tar.gz"
-      sha256 "408760628ccf86a08deb324a96044bca559ba4fd10fd03761cb4f41f1f8b5f8d"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/nikaro/zabbixmon/releases/download/v0.3.2/zabbixmon_0.3.2_linux_arm64.tar.gz"
+      sha256 "e8d5de2df46d8bc8fb4b1480266fbd24b7153f330f7957f07bdb7f1f8136fde6"
 
       def install
         bin.install "zabbixmon"
