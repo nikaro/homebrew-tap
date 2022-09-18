@@ -5,52 +5,61 @@
 class Devc < Formula
   desc "CLI tool to manage your devcontainers"
   homepage "https://github.con/nikaro/devc"
-  version "1.0.0-beta.3"
+  version "1.0.0-beta.4"
   license "GPL-3.0-or-later"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/nikaro/devc/releases/download/v1.0.0-beta.3/devc_1.0.0-beta.3_darwin_amd64.tar.gz"
-      sha256 "9b73bb0d7b44b63fdea6ec9aa114044c412c14f408edfa0c3e7dbe2ac764c11b"
+    if Hardware::CPU.arm?
+      url "https://github.com/nikaro/devc/releases/download/v1.0.0-beta.4/devc_1.0.0-beta.4_darwin_arm64.tar.gz"
+      sha256 "2c6cca36dfe4243ad0fdd2337073a46db2e18afd050d2a45f7e5c6f63339868b"
 
       def install
         bin.install "devc"
+        man1.install Dir["man/*"]
+        bash_completion.install "completions/devc"
+        fish_completion.install "completions/devc.fish"
+        zsh_completion.install "completions/_devc"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/nikaro/devc/releases/download/v1.0.0-beta.3/devc_1.0.0-beta.3_darwin_arm64.tar.gz"
-      sha256 "1482c99c4418744777eff91042a4a6d3d2adfd045f657c96fd456fb00783aa52"
+    if Hardware::CPU.intel?
+      url "https://github.com/nikaro/devc/releases/download/v1.0.0-beta.4/devc_1.0.0-beta.4_darwin_amd64.tar.gz"
+      sha256 "7899a9cff3db200d3089b09fef735f8fe5de4f8cc2f9c116f75899702398bca2"
 
       def install
         bin.install "devc"
+        man1.install Dir["man/*"]
+        bash_completion.install "completions/devc"
+        fish_completion.install "completions/devc.fish"
+        zsh_completion.install "completions/_devc"
       end
     end
   end
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/nikaro/devc/releases/download/v1.0.0-beta.3/devc_1.0.0-beta.3_linux_arm64.tar.gz"
-      sha256 "48ee61fc6485df5a93b2b89d86e31e9f272d3de140a671e1bf887f90612581d0"
+      url "https://github.com/nikaro/devc/releases/download/v1.0.0-beta.4/devc_1.0.0-beta.4_linux_arm64.tar.gz"
+      sha256 "8f38f1d01538da9412ec7636d10bd7e4abea7175457735a53f157a32c54e11c7"
 
       def install
         bin.install "devc"
+        man1.install Dir["man/*"]
+        bash_completion.install "completions/devc"
+        fish_completion.install "completions/devc.fish"
+        zsh_completion.install "completions/_devc"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/nikaro/devc/releases/download/v1.0.0-beta.3/devc_1.0.0-beta.3_linux_amd64.tar.gz"
-      sha256 "dd090be8e61b5845cb4582c6b25f000816966956d0659cbc4ae5969f62b75062"
+      url "https://github.com/nikaro/devc/releases/download/v1.0.0-beta.4/devc_1.0.0-beta.4_linux_amd64.tar.gz"
+      sha256 "2239089e829c126595e4f14b864bcd06fbe4c2a30ee977e51333605d2cdca870"
 
       def install
         bin.install "devc"
+        man1.install Dir["man/*"]
+        bash_completion.install "completions/devc"
+        fish_completion.install "completions/devc.fish"
+        zsh_completion.install "completions/_devc"
       end
     end
-  end
-
-  def post_install
-    man1.install Dir["man/*"]
-    bash_completion.install "completions/devc"
-    fish_completion.install "completions/devc.fish"
-    zsh_completion.install "completions/_devc"
   end
 
   test do
