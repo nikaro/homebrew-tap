@@ -5,21 +5,21 @@
 class Devc < Formula
   desc "CLI tool to manage your devcontainers"
   homepage "https://github.con/nikaro/devc"
-  version "1.0.0-beta.2"
+  version "1.0.0-beta.3"
   license "GPL-3.0-or-later"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/nikaro/devc/releases/download/v1.0.0-beta.2/devc_1.0.0-beta.2_darwin_arm64.tar.gz"
-      sha256 "a1bea9269f63c47a88b5604a3fc3044565df815959fd1d3271a55d76fae313f8"
+    if Hardware::CPU.intel?
+      url "https://github.com/nikaro/devc/releases/download/v1.0.0-beta.3/devc_1.0.0-beta.3_darwin_amd64.tar.gz"
+      sha256 "9b73bb0d7b44b63fdea6ec9aa114044c412c14f408edfa0c3e7dbe2ac764c11b"
 
       def install
         bin.install "devc"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/nikaro/devc/releases/download/v1.0.0-beta.2/devc_1.0.0-beta.2_darwin_amd64.tar.gz"
-      sha256 "8f52771a56acd8eb210fbaf698e5e85398c358f355997e49cb7016992e0e5ae4"
+    if Hardware::CPU.arm?
+      url "https://github.com/nikaro/devc/releases/download/v1.0.0-beta.3/devc_1.0.0-beta.3_darwin_arm64.tar.gz"
+      sha256 "1482c99c4418744777eff91042a4a6d3d2adfd045f657c96fd456fb00783aa52"
 
       def install
         bin.install "devc"
@@ -28,17 +28,17 @@ class Devc < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/nikaro/devc/releases/download/v1.0.0-beta.2/devc_1.0.0-beta.2_linux_amd64.tar.gz"
-      sha256 "40f0aaf0c66949eaf9d40ef7b25ebd24b94e52410e1bd962cd890b60637215c7"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/nikaro/devc/releases/download/v1.0.0-beta.3/devc_1.0.0-beta.3_linux_arm64.tar.gz"
+      sha256 "48ee61fc6485df5a93b2b89d86e31e9f272d3de140a671e1bf887f90612581d0"
 
       def install
         bin.install "devc"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/nikaro/devc/releases/download/v1.0.0-beta.2/devc_1.0.0-beta.2_linux_arm64.tar.gz"
-      sha256 "22048067f00502213c9a48c6457adc36fe512f812d6d5d6654c8c922c54b5acc"
+    if Hardware::CPU.intel?
+      url "https://github.com/nikaro/devc/releases/download/v1.0.0-beta.3/devc_1.0.0-beta.3_linux_amd64.tar.gz"
+      sha256 "dd090be8e61b5845cb4582c6b25f000816966956d0659cbc4ae5969f62b75062"
 
       def install
         bin.install "devc"
@@ -46,7 +46,14 @@ class Devc < Formula
     end
   end
 
+  def post_install
+    man1.install Dir["man/*"]
+    bash_completion.install "completions/devc"
+    fish_completion.install "completions/devc.fish"
+    zsh_completion.install "completions/_devc"
+  end
+
   test do
-    system "#{bin}/devc", "--help"
+    system "#{bin}/devc", "init"
   end
 end
