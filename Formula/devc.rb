@@ -5,13 +5,13 @@
 class Devc < Formula
   desc "CLI tool to manage your devcontainers"
   homepage "https://github.con/nikaro/devc"
-  version "1.0.0-beta.4"
+  version "1.0.0-beta.5"
   license "GPL-3.0-or-later"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/nikaro/devc/releases/download/v1.0.0-beta.4/devc_1.0.0-beta.4_darwin_arm64.tar.gz"
-      sha256 "2c6cca36dfe4243ad0fdd2337073a46db2e18afd050d2a45f7e5c6f63339868b"
+    if Hardware::CPU.intel?
+      url "https://github.com/nikaro/devc/releases/download/v1.0.0-beta.5/devc_1.0.0-beta.5_darwin_amd64.tar.gz"
+      sha256 "0e5e9b1fdfbd1d4ff4da9fda03c279f517715761ee74faed1841182b0897e439"
 
       def install
         bin.install "devc"
@@ -21,9 +21,9 @@ class Devc < Formula
         zsh_completion.install "completions/_devc"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/nikaro/devc/releases/download/v1.0.0-beta.4/devc_1.0.0-beta.4_darwin_amd64.tar.gz"
-      sha256 "7899a9cff3db200d3089b09fef735f8fe5de4f8cc2f9c116f75899702398bca2"
+    if Hardware::CPU.arm?
+      url "https://github.com/nikaro/devc/releases/download/v1.0.0-beta.5/devc_1.0.0-beta.5_darwin_arm64.tar.gz"
+      sha256 "248fdab9bb78a5d22ade51268559410ad5f7d2dbaa0a231892707cc28679be0e"
 
       def install
         bin.install "devc"
@@ -37,8 +37,8 @@ class Devc < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/nikaro/devc/releases/download/v1.0.0-beta.4/devc_1.0.0-beta.4_linux_arm64.tar.gz"
-      sha256 "8f38f1d01538da9412ec7636d10bd7e4abea7175457735a53f157a32c54e11c7"
+      url "https://github.com/nikaro/devc/releases/download/v1.0.0-beta.5/devc_1.0.0-beta.5_linux_arm64.tar.gz"
+      sha256 "b45de1d717a44fb34f983c55b1895b42894c5606a5826f875a4bdeafb73fcceb"
 
       def install
         bin.install "devc"
@@ -49,8 +49,8 @@ class Devc < Formula
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/nikaro/devc/releases/download/v1.0.0-beta.4/devc_1.0.0-beta.4_linux_amd64.tar.gz"
-      sha256 "2239089e829c126595e4f14b864bcd06fbe4c2a30ee977e51333605d2cdca870"
+      url "https://github.com/nikaro/devc/releases/download/v1.0.0-beta.5/devc_1.0.0-beta.5_linux_amd64.tar.gz"
+      sha256 "3c11edc3e1568055ea82af606a6ac321525ac99571a31dcea5f0b818cfed268d"
 
       def install
         bin.install "devc"
