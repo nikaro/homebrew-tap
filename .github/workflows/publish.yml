@@ -6,7 +6,7 @@ on:
       - labeled
 
 jobs:
-  pr-pull:
+  publish:
     if: contains(github.event.pull_request.labels.*.name, 'pr-pull')
     runs-on: ubuntu-latest
     steps:
