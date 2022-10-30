@@ -1,11 +1,7 @@
 name: Tests
 
 on:
-  push:
-    branches:
-      - main
   pull_request:
-  workflow_dispatch:
 
 jobs:
   test:
@@ -23,7 +19,6 @@ jobs:
         run: brew test-bot
 
       - name: Upload bottles as artifact
-        if: always() && github.event_name == 'pull_request'
         uses: actions/upload-artifact@main
         with:
           name: bottles
