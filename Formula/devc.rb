@@ -5,13 +5,13 @@
 class Devc < Formula
   desc "CLI tool to manage your devcontainers"
   homepage "https://github.con/nikaro/devc"
-  version "1.0.0-beta.9"
+  version "1.0.0"
   license "GPL-3.0-or-later"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/nikaro/devc/releases/download/v1.0.0-beta.9/devc_1.0.0-beta.9_darwin_arm64.tar.gz"
-      sha256 "067a8879c571a505383dd9cc502547e8ee726526bf48c126834dde5421266337"
+      url "https://github.com/nikaro/devc/releases/download/v1.0.0/devc_1.0.0_darwin_arm64.tar.gz"
+      sha256 "00be8166f9cc034c7d2b3def7aa8b92f492466d5ba9efd1d0dd14744473ec4ab"
 
       def install
         bin.install "devc"
@@ -22,8 +22,8 @@ class Devc < Formula
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/nikaro/devc/releases/download/v1.0.0-beta.9/devc_1.0.0-beta.9_darwin_amd64.tar.gz"
-      sha256 "762eccd982f483502f68e1152f4b031d721bdef8b6a97c89eddade957646b94b"
+      url "https://github.com/nikaro/devc/releases/download/v1.0.0/devc_1.0.0_darwin_amd64.tar.gz"
+      sha256 "88b8b5abc3d13647238151f81eb4fedfa8977c47b0b0a56edc24b758b1098419"
 
       def install
         bin.install "devc"
@@ -37,8 +37,8 @@ class Devc < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/nikaro/devc/releases/download/v1.0.0-beta.9/devc_1.0.0-beta.9_linux_arm64.tar.gz"
-      sha256 "5c23304a1a2f318985d779e77ce81ab9753f1e57c32c0a043b2eed3ae6b782c2"
+      url "https://github.com/nikaro/devc/releases/download/v1.0.0/devc_1.0.0_linux_arm64.tar.gz"
+      sha256 "154a36ba86b508954fc218e0dbc53d06dfc0db00dff694632ef58124514dba19"
 
       def install
         bin.install "devc"
@@ -49,8 +49,8 @@ class Devc < Formula
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/nikaro/devc/releases/download/v1.0.0-beta.9/devc_1.0.0-beta.9_linux_amd64.tar.gz"
-      sha256 "cf4053ecbc76e34dd7e91c65963619bdc29720e40a4d8a495bec24f921d39e83"
+      url "https://github.com/nikaro/devc/releases/download/v1.0.0/devc_1.0.0_linux_amd64.tar.gz"
+      sha256 "594e19cda9130b62ee23528acad03fd4b834798254a25e81ab43c2cb3dbdbb59"
 
       def install
         bin.install "devc"
