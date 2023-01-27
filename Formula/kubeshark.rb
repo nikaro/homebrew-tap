@@ -2,27 +2,27 @@ class Kubeshark < Formula
   desc "API traffic viewer for Kubernetes "
   homepage "https://github.com/kubeshark/kubeshark"
   license "Apache-2.0"
-  version "38.3"
+  version "38.4"
 
   on_macos do
     if Hardware::CPU.intel?
       url "https://github.com/kubeshark/kubeshark/releases/download/#{version}/kubeshark_darwin_amd64"
-      sha256 "e27ea78560e936cc8dc341e77ec7f0df5824ee15fbf9b3e218af191c6e04da8e"
+      sha256 "b8baeeb61d4b226dfea7618f6bd8c65865a52e6f4488fe0a01bcb3fb7e513987"
     end
     if Hardware::CPU.arm?
       url "https://github.com/kubeshark/kubeshark/releases/download/#{version}/kubeshark_darwin_arm64"
-      sha256 "4f0459a88e2e5b007decdd69c9855a7c45e466f229a43d3aea1a4d38a244b27c"
+      sha256 "9753173ffbf6ee6c7b8e857939769dba5e9ae0ebdfe8d4eb096615227e94ad57"
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
       url "https://github.com/kubeshark/kubeshark/releases/download/#{version}/kubeshark_linux_amd64"
-      sha256 "4f3423502e40d4390d304602837a2aa823fad165d53626df74b436c01de24be4"
+      sha256 "255680662dd4651d16d2b98e2d9d3acc6133c4557c8c7106cf0b719aa81241ce"
     end
     if Hardware::CPU.arm?
       url "https://github.com/kubeshark/kubeshark/releases/download/#{version}/kubeshark_linux_arm64"
-      sha256 "4ec7f9345019fa4efac326a8305255fc5838bfcf744d7594cdcf5e91d48a704b"
+      sha256 "83da14d7e8ae6837140b38d5483178ca846449ef493c031d028c3b0979ae091a"
     end
   end
 
