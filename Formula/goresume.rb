@@ -11,7 +11,7 @@ class Goresume < Formula
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/nikaro/goresume/releases/download/v0.1.0/goresume_0.1.0_darwin_arm64.tar.gz"
-      sha256 "06924dacb5c4b64cd00221bd65415c43a01a2967a9cdcb1d58265392fc81a52e"
+      sha256 "3b79c868bae0576bafec213c5714240a284ccc39129483334706acd8899ecb9d"
 
       def install
         bin.install "goresume"
@@ -20,7 +20,7 @@ class Goresume < Formula
     end
     if Hardware::CPU.intel?
       url "https://github.com/nikaro/goresume/releases/download/v0.1.0/goresume_0.1.0_darwin_amd64.tar.gz"
-      sha256 "8234eade410dae49b931f8ed5a88f4530088fcf657118bcd9ebc56bf63c6d1c7"
+      sha256 "634356a52a724d36900995ed5e43484b5b31ff47d3137d9d1275d6e2308542d2"
 
       def install
         bin.install "goresume"
@@ -32,7 +32,7 @@ class Goresume < Formula
   on_linux do
     if Hardware::CPU.intel?
       url "https://github.com/nikaro/goresume/releases/download/v0.1.0/goresume_0.1.0_linux_amd64.tar.gz"
-      sha256 "239cd50092369a20ac4d3ba62a32eeae5787f205041f0d0609122038430d9ce9"
+      sha256 "8b3a34f80b052f72ddf12ffdfc0180a6741fc631005a84405ed335cc01f3592b"
 
       def install
         bin.install "goresume"
@@ -41,7 +41,7 @@ class Goresume < Formula
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/nikaro/goresume/releases/download/v0.1.0/goresume_0.1.0_linux_arm64.tar.gz"
-      sha256 "de38f18810faf28eb2c26d8186c07f1181e54ca045ff42869c0c643b7e2d7b97"
+      sha256 "ab3148d97a124ac929d62df25294014cacc3f65929b7d9fc14f87757657c8bcd"
 
       def install
         bin.install "goresume"
