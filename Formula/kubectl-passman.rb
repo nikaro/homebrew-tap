@@ -1,5 +1,5 @@
 class KubectlPassman < Formula
-  desc "kubectl plugin that provides the missing link/glue between common password managers and kubectl"
+  desc "The missing link/glue between common password managers and kubectl"
   homepage "https://github.com/chrisns/kubectl-passman"
   license "MIT"
   version "v1.2.2"
