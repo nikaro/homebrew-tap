@@ -31,6 +31,6 @@ class Kubeshark < Formula
   end
 
   test do
-    system "kubeshark", "version"
+    system "#{bin}/kubeshark", "version"
   end
 end

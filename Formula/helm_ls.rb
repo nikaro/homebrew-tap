@@ -1,9 +1,9 @@
-class HelmLs< Formula
+class HelmLs < Formula
   desc "Language server for Helm"
   homepage "https://github.com/mrjosh/helm-ls"
-  url "https://github.com/mrjosh/helm-ls/archive/1552f4be6b43eb3fc6c61ce056f1d28f36650c62.tar.gz"
-  version "0"
-  sha256 "7b3e2f411feb2341026b2dabbcd2205f0b01aeb82cb438abae14a8baa2f16ef4"
+  url "https://github.com/mrjosh/helm-ls/archive/refs/tags/v0.0.5.tar.gz"
+  version "0.0.5"
+  sha256 "8773e8df3f5771e3736b3f68c5b5c386a3c94ac5ea591f8949ac815178dfaddf"
   license "MIT"
 
   depends_on "go" => :build
@@ -13,6 +13,6 @@ class HelmLs< Formula
   end
 
   test do
-    system "helm_ls", "version"
+    system "#{bin}/helm_ls", "version"
   end
 end
