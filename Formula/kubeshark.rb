@@ -1,8 +1,8 @@
 class Kubeshark < Formula
-  desc "API traffic viewer for Kubernetes "
+  desc "API traffic viewer for Kubernetes"
   homepage "https://github.com/kubeshark/kubeshark"
-  license "Apache-2.0"
   version "38.4"
+  license "Apache-2.0"
 
   on_macos do
     if Hardware::CPU.intel?
