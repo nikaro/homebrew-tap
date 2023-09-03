@@ -1,7 +1,12 @@
 name: Tests
 
 on:
+  push:
+    branches:
+      - main
   pull_request:
+    branches:
+      - main
 
 jobs:
   test:
@@ -11,15 +16,17 @@ jobs:
           - macOS-latest
     runs-on: ${{ matrix.os }}
     steps:
+
       - name: Set up Homebrew
         id: set-up-homebrew
-        uses: Homebrew/actions/setup-homebrew@master
+        uses: Homebrew/actions/setup-homebrew@41775cf0c82ef066f1eb39cea1bd74697ca5b735 # master
 
       - name: Run tests
         run: brew test-bot
 
       - name: Upload bottles as artifact
-        uses: actions/upload-artifact@main
+        if: github.ref_name || github.head_ref == 'main'
+        uses: actions/upload-artifact@0b7f8abb1508181956e8e162db84b466c27e18ce # v3.1.2
         with:
           name: bottles
           path: '*.bottle.*'
