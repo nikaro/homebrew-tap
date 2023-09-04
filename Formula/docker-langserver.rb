@@ -1,3 +1,5 @@
+# rev1
+
 require "language/node"
 
 class DockerLangserver < Formula
@@ -23,7 +25,7 @@ class DockerLangserver < Formula
     DOCKERFILE
 
     Open3.popen3("#{bin}/docker-langserver", "--stdio") do |stdin, _stdout|
-      stdin.write to_s(dockerfile)
+      stdin.write dockerfile.to_s
     end
   end
 end

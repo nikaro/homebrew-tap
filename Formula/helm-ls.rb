@@ -1,3 +1,5 @@
+# rev1
+
 class HelmLs < Formula
   desc "Language server for Helm"
   homepage "https://github.com/mrjosh/helm-ls"
@@ -12,6 +14,6 @@ class HelmLs < Formula
   end
 
   test do
-    system "#{bin}/helm_ls", "version"
+    system "#{bin}/helm-ls", "version"
   end
 end
