@@ -9,6 +9,13 @@ class DockerLangserver < Formula
   sha256 "1509a3d44e795449bdf482c32da720a86de9d7d5ae9b2513209ce4503ede35e0"
   license "MIT"
 
+  bottle do
+    root_url "https://github.com/nikaro/homebrew-tap/releases/download/docker-langserver-0.10.2"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, ventura:      "e4da86ab720ba7e682dd4b3bf1ccd270df0ce2487e4222a2a83120b743100fd5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "27114a04c67cda325dbb6874a646439a0eef8f796d23788fabe68d880ec4aca9"
+  end
+
   depends_on "node"
 
   def install
