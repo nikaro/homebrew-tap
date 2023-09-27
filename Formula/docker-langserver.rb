@@ -10,10 +10,9 @@ class DockerLangserver < Formula
   license "MIT"
 
   bottle do
-    root_url "https://github.com/nikaro/homebrew-tap/releases/download/docker-langserver-0.10.2"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, ventura:      "e4da86ab720ba7e682dd4b3bf1ccd270df0ce2487e4222a2a83120b743100fd5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "27114a04c67cda325dbb6874a646439a0eef8f796d23788fabe68d880ec4aca9"
+    root_url "https://github.com/nikaro/homebrew-tap/releases/download/docker-langserver-0.11.0"
+    sha256 cellar: :any_skip_relocation, ventura:      "5cafc831874eb4524b8a4e9e4b96f6ed411bf526916f8843b537326e3f8298c5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "c39c4c8322f9cfbee1f078b6eb8c65fcf43e2aef3e9a1347d5f9a52124abc0be"
   end
 
   depends_on "node"
