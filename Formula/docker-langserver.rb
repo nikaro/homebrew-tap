@@ -5,8 +5,8 @@ require "language/node"
 class DockerLangserver < Formula
   desc "This is a language server for Dockerfiles"
   homepage "https://github.com/rcjsuen/dockerfile-language-server-nodejs"
-  url "https://registry.npmjs.org/dockerfile-language-server-nodejs/-/dockerfile-language-server-nodejs-0.10.2.tgz"
-  sha256 "1509a3d44e795449bdf482c32da720a86de9d7d5ae9b2513209ce4503ede35e0"
+  url "https://registry.npmjs.org/dockerfile-language-server-nodejs/-/dockerfile-language-server-nodejs-0.11.0.tgz"
+  sha256 "042cbd1fb9baf818bf5eb0730a45a0ae257d42e74d358c8bf177f5a561f3839b"
   license "MIT"
 
   bottle do
