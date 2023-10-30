@@ -5,8 +5,8 @@ class KubectlPassman < Formula
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/chrisns/kubectl-passman/releases/download/v1.2.2/kubectl-passman-darwin-amd64.zip"
-      sha256 "5491e46cd9c2398f5046358088a819c0813a396a738e3edf9264e95bb8040101"
+      url "https://github.com/chrisns/kubectl-passman/archive/v1.2.3.tar.gz"
+      sha256 "6da71353a39775e3a43788a9cc8cdbacf3204ec3ca52fa098fefa5d3963c10b7"
     end
     if Hardware::CPU.arm?
       url "https://github.com/chrisns/kubectl-passman/releases/download/v1.2.2/kubectl-passman-darwin-arm64.zip"
