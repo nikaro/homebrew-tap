@@ -8,6 +8,12 @@ class Pyinfra < Formula
   license "MIT"
   head "https://github.com/pyinfra-dev/pyinfra.git", branch: "2.x"
 
+  bottle do
+    root_url "https://github.com/nikaro/homebrew-tap/releases/download/pyinfra-2.8"
+    sha256 cellar: :any,                 ventura:      "be72568bf9df1b0924c6ae56961828108a758a0dabcf2eb7a4e65fe97862f9ac"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "ffc6d630e404d1ba49e8b46ff6f918e795746bd3a148fc0143d5944505feaf04"
+  end
+
   depends_on "pkg-config" => :build
   depends_on "rust" => :build
   depends_on "python@3.11"
