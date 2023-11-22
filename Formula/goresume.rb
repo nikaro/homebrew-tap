@@ -5,13 +5,13 @@
 class Goresume < Formula
   desc "Build HTML/PDF resume from JSON/YAML/TOML"
   homepage "https://github.con/nikaro/goresume"
-  version "0.2.4"
+  version "0.2.5"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/nikaro/goresume/releases/download/0.2.4/goresume_0.2.4_darwin_amd64.tar.gz"
-      sha256 "6084bfe5176e0edf1fc55e9093f6f5db79865847fc299d366517d02fee779022"
+      url "https://github.com/nikaro/goresume/releases/download/0.2.5/goresume_0.2.5_darwin_amd64.tar.gz"
+      sha256 "12368fbf139717d7fa8193092c5d70ecb66972a30c9e972abfd42c91ed19538c"
 
       def install
         bin.install "goresume"
@@ -19,8 +19,8 @@ class Goresume < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/nikaro/goresume/releases/download/0.2.4/goresume_0.2.4_darwin_arm64.tar.gz"
-      sha256 "e76d34ec0a22ac3ca9308f1580650680cd6f4966ca6916c93e229d248a7c8dc8"
+      url "https://github.com/nikaro/goresume/releases/download/0.2.5/goresume_0.2.5_darwin_arm64.tar.gz"
+      sha256 "5f5a2f1eca88e2af2b7b16cd8fc3b8d5b6bf3dc5e8f3eaa183308ab1a638b671"
 
       def install
         bin.install "goresume"
@@ -31,8 +31,8 @@ class Goresume < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/nikaro/goresume/releases/download/0.2.4/goresume_0.2.4_linux_arm64.tar.gz"
-      sha256 "6b39327bc55bd5c773c83e8f15a4a471ba321ee9fe5be09835ce51eecb563468"
+      url "https://github.com/nikaro/goresume/releases/download/0.2.5/goresume_0.2.5_linux_arm64.tar.gz"
+      sha256 "7a7f555352738904d22d2b7659c3854f6c94380ccaa5441680fa6461f044c4a3"
 
       def install
         bin.install "goresume"
@@ -40,8 +40,8 @@ class Goresume < Formula
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/nikaro/goresume/releases/download/0.2.4/goresume_0.2.4_linux_amd64.tar.gz"
-      sha256 "3c506bd99013892b60097718c16d04f475178029b45f6549c775143d3e736c31"
+      url "https://github.com/nikaro/goresume/releases/download/0.2.5/goresume_0.2.5_linux_amd64.tar.gz"
+      sha256 "25dd02124890eca9323adfa1164a066bd20154af287f034d6f158475855e75dc"
 
       def install
         bin.install "goresume"
