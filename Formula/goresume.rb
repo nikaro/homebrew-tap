@@ -5,13 +5,13 @@
 class Goresume < Formula
   desc "Build HTML/PDF resume from JSON/YAML/TOML"
   homepage "https://github.con/nikaro/goresume"
-  version "0.2.10"
+  version "0.2.12"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/nikaro/goresume/releases/download/0.2.10/goresume_0.2.10_darwin_arm64.tar.gz"
-      sha256 "b92fae509f3bc67213a95a5a3107135f11d5734a2ccaafe0560def0a7d8e9770"
+      url "https://github.com/nikaro/goresume/releases/download/0.2.12/goresume_0.2.12_darwin_arm64.tar.gz"
+      sha256 "dbddf7c50557dfe211304f38f36d942f23de4438b94f1f5197ffc4c5e767460d"
 
       def install
         bin.install "goresume"
@@ -19,8 +19,8 @@ class Goresume < Formula
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/nikaro/goresume/releases/download/0.2.10/goresume_0.2.10_darwin_amd64.tar.gz"
-      sha256 "6b801d5b5681f2608d699c89b03a0dc7a6e63a6cf7197a1017ee8d3c9c8964a3"
+      url "https://github.com/nikaro/goresume/releases/download/0.2.12/goresume_0.2.12_darwin_amd64.tar.gz"
+      sha256 "0deb5e7a6edc66b6f98f4d66eac9d27917f6323fed4f0ce1d5e273564609fdec"
 
       def install
         bin.install "goresume"
@@ -31,8 +31,8 @@ class Goresume < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/nikaro/goresume/releases/download/0.2.10/goresume_0.2.10_linux_amd64.tar.gz"
-      sha256 "749ca6e73bd0c65730d7716e71be25e9bb087a904e2d82350b77af32537d97f5"
+      url "https://github.com/nikaro/goresume/releases/download/0.2.12/goresume_0.2.12_linux_amd64.tar.gz"
+      sha256 "149ef650c91aabc870b2500ef615cba33ea6bc886784197711fe80800ec82a10"
 
       def install
         bin.install "goresume"
@@ -40,8 +40,8 @@ class Goresume < Formula
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/nikaro/goresume/releases/download/0.2.10/goresume_0.2.10_linux_arm64.tar.gz"
-      sha256 "a9cd784398969988fe408af8a2f22bf4bca85926f0cf21c802205aca41bc1331"
+      url "https://github.com/nikaro/goresume/releases/download/0.2.12/goresume_0.2.12_linux_arm64.tar.gz"
+      sha256 "5bd5c6368c858b7562281c2cad2ec94102604a7d63c162229c7b5d4bc9fa7acb"
 
       def install
         bin.install "goresume"
