@@ -6,8 +6,8 @@ class Talosctl < Formula
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/siderolabs/talos/releases/download/v1.6.5/talosctl-darwin-arm64"
-      sha256 "d9654e4db9b264fb4ed369240d1108b8025df70fc159c2e8587f13a6ee5ea938"
+      url "https://github.com/siderolabs/talos/archive/v1.6.7.tar.gz"
+      sha256 "2c730e44c051100674925c97c3b8a02586484c2995b0e56334bc1b382acf001f"
 
       def install
         bin.install "talosctl-darwin-arm64" => "talosctl"
