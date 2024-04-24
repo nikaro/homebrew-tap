@@ -7,7 +7,7 @@ class Talosctl < Formula
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/siderolabs/talos/releases/download/v1.6.7/talosctl-darwin-arm64"
-      sha256 "c3815d7d5f2b7f2571935f74aac5a51686b8c99a52173733b571ce242a81ba68"
+      sha256 "acb03f0755d1aa981ea7485f606c2b8278f00e53a543bc80e070eaaf19df63b8"
 
       def install
         bin.install "talosctl-darwin-arm64" => "talosctl"
@@ -15,7 +15,7 @@ class Talosctl < Formula
     end
     if Hardware::CPU.intel?
       url "https://github.com/siderolabs/talos/releases/download/v1.6.7/talosctl-darwin-amd64"
-      sha256 "4c9576552885313c9b39b6354b953824a657388f2ddc0a725e3290719477c3ee"
+      sha256 "334c57397c3bf654c6993d741fc79f20edf5abb38e3bbd90060f1f395514f973"
 
       def install
         bin.install "talosctl-darwin-amd64" => "talosctl"
@@ -24,20 +24,20 @@ class Talosctl < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/siderolabs/talos/releases/download/v1.6.7/talosctl-linux-amd64"
-      sha256 "99540b1d3bbc4d7bd41e8dfd5027941bed5eb29eff09756aed513b41e391eac9"
-
-      def install
-        bin.install "talosctl-linux-amd64" => "talosctl"
-      end
-    end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/siderolabs/talos/releases/download/v1.6.7/talosctl-linux-arm64"
-      sha256 "5d3c8edb177e779dce6f09252d66129162947985446ea3d80d5f2443a39ac058"
+      sha256 "c9d6030de0e7b234fae601422cd341dde8cd08069155af719fbcc1bc6d931c15"
 
       def install
         bin.install "talosctl-linux-arm64" => "talosctl"
+      end
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/siderolabs/talos/releases/download/v1.6.7/talosctl-linux-amd64"
+      sha256 "b48d94c59d85868ae506eb68e79a60d248b45ed68b3122e75a8b8bcccdc77a28"
+
+      def install
+        bin.install "talosctl-linux-amd64" => "talosctl"
       end
     end
   end
