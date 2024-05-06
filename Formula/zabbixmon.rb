@@ -5,21 +5,21 @@
 class Zabbixmon < Formula
   desc "CLI application to show currents alerts on Zabbix"
   homepage "https://github.com/nikaro/zabbixmon"
-  version "0.9.2"
+  version "0.9.3"
   license "GPL-3.0-or-later"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/nikaro/zabbixmon/releases/download/0.9.2/zabbixmon_0.9.2_darwin_amd64.tar.gz"
-      sha256 "7b75edc27046cc06c4bd0e517c6da4f20440cc027085a58851e785a3880bbba5"
+      url "https://github.com/nikaro/zabbixmon/releases/download/0.9.3/zabbixmon_0.9.3_darwin_amd64.tar.gz"
+      sha256 "0a898ea2d742f3a8bed2112af4224d3ce1e75eff492d25e5e7a22a45bd9bb7d3"
 
       def install
         bin.install "zabbixmon"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/nikaro/zabbixmon/releases/download/0.9.2/zabbixmon_0.9.2_darwin_arm64.tar.gz"
-      sha256 "27755ec62af8809c90d8bb944ea047102736c33443b949c992e2007b823694af"
+      url "https://github.com/nikaro/zabbixmon/releases/download/0.9.3/zabbixmon_0.9.3_darwin_arm64.tar.gz"
+      sha256 "5340e75e295db9728a274539eb522e1aad630d68a522961a6bee07efca29cb6f"
 
       def install
         bin.install "zabbixmon"
@@ -29,16 +29,16 @@ class Zabbixmon < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/nikaro/zabbixmon/releases/download/0.9.2/zabbixmon_0.9.2_linux_amd64.tar.gz"
-      sha256 "cfe1745f06b37995af30920d05e7aa6aaf1f093842d9bde011a7cb0c7c9808df"
+      url "https://github.com/nikaro/zabbixmon/releases/download/0.9.3/zabbixmon_0.9.3_linux_amd64.tar.gz"
+      sha256 "4efd24dd1c3ba909f810f0a2c936b1841e606e6c8602948d73996a31efdb9523"
 
       def install
         bin.install "zabbixmon"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/nikaro/zabbixmon/releases/download/0.9.2/zabbixmon_0.9.2_linux_arm64.tar.gz"
-      sha256 "2c67a59462f03677dd85ed0debcd929465278d61e8442b74510fe199966aa83a"
+      url "https://github.com/nikaro/zabbixmon/releases/download/0.9.3/zabbixmon_0.9.3_linux_arm64.tar.gz"
+      sha256 "bd0752ca1147c12904bf0ff8b9c2d68a7aa67a854248fc22e12ea28db103dcb7"
 
       def install
         bin.install "zabbixmon"
