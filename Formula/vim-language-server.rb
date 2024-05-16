@@ -6,7 +6,7 @@ class VimLanguageServer < Formula
   url "https://registry.npmjs.org/vim-language-server/-/vim-language-server-2.3.1.tgz"
   sha256 "ffe0d18258a4b09bec46ec853f8838748c007c62c1fcf12d1eefedfaf19e1c46"
   license "MIT"
-  revision 1
+  revision 2
   head "https://github.com/iamcco/vim-language-server.git", branch: "master"
 
   bottle do
@@ -20,5 +20,21 @@ class VimLanguageServer < Formula
   def install
     system "npm", "install", *Language::Node.std_npm_install_args(libexec)
     bin.install_symlink Dir["#{libexec}/bin/*"]
+  end
+
+  test do
+    json = <<~JSON
+      {
+        "jsonrpc": "2.0",
+        "id": 1,
+        "method": "initialize",
+        "params": {
+          "rootUri": null,
+          "capabilities": {}
+        }
+      }
+    JSON
+    input = "Content-Length: #{json.size}\r\n\r\n#{json}"
+    pipe_output("#{bin}/vim-language-server --stdio", input)
   end
 end
