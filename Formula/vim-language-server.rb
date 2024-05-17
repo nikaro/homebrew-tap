@@ -7,7 +7,6 @@ class VimLanguageServer < Formula
   sha256 "ffe0d18258a4b09bec46ec853f8838748c007c62c1fcf12d1eefedfaf19e1c46"
   license "MIT"
   revision 2
-  head "https://github.com/iamcco/vim-language-server.git", branch: "master"
 
   bottle do
     root_url "https://github.com/nikaro/homebrew-tap/releases/download/vim-language-server-2.3.1_2"
