@@ -10,9 +10,9 @@ class VimLanguageServer < Formula
   head "https://github.com/iamcco/vim-language-server.git", branch: "master"
 
   bottle do
-    root_url "https://github.com/nikaro/homebrew-tap/releases/download/vim-language-server-2.3.1_1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma: "40cadc75c474ad716f6d7f87879ca3b0d1d85861e0f803386a7288f9428db763"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "38cd726fdadef3ec52f38392fa900c22371f17bd77217aa824f19fd3d2c34d60"
+    root_url "https://github.com/nikaro/homebrew-tap/releases/download/vim-language-server-2.3.1_2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma: "e5979cd5c289a160372f605663ad66acdca833f9aedb804b1c1168e267a19b02"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "0351a64956a690c4e7b46c495a0554014cd6148ab7ab8e0530ba98e6a7d78fd7"
   end
 
   depends_on "node"
