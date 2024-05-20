@@ -1,9 +1,13 @@
-name: brew test-bot
+name: Tests
+
 on:
-  push:
-    branches:
-      - main
   pull_request:
+    branches: [main]
+    paths: ["Formula/**"]
+  push:
+    branches: [main]
+    paths: ["Formula/**"]
+
 jobs:
   test-bot:
     strategy:
@@ -17,7 +21,7 @@ jobs:
 
       - name: Cache Homebrew Bundler RubyGems
         id: cache
-        uses: actions/cache@0c45773b623bea8c8e75f6c82b208c3cf94ea4f9 # v4
+        uses: actions/cache@0c45773b623bea8c8e75f6c82b208c3cf94ea4f9 # v4.0.2
         with:
           path: ${{ steps.set-up-homebrew.outputs.gems-path }}
           key: ${{ runner.os }}-rubygems-${{ steps.set-up-homebrew.outputs.gems-hash }}
