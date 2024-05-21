@@ -4,7 +4,6 @@ class Zabbixmon < Formula
   url "https://github.com/nikaro/zabbixmon/archive/refs/tags/0.9.5.tar.gz"
   sha256 "b86001419d7c6549af3163ae8a9db7373f42767391a9cc58b426b61174cd67df"
   license "GPL-3.0-or-later"
-  revision 1
 
   bottle do
     root_url "https://github.com/nikaro/homebrew-tap/releases/download/zabbixmon-0.9.3_1"
