@@ -4,7 +4,6 @@ class Goresume < Formula
   url "https://github.com/nikaro/goresume/archive/refs/tags/0.3.5.tar.gz"
   sha256 "27a620f3cc13b4be1894950efcdcd815bc0b595b7d4225870ab5d72e1cfe471c"
   license "MIT"
-  revision 1
 
   bottle do
     root_url "https://github.com/nikaro/homebrew-tap/releases/download/goresume-0.3.5_1"
