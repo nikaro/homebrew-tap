@@ -27,17 +27,17 @@ jobs:
     steps:
       - name: Set up Homebrew
         id: set-up-homebrew
-        uses: Homebrew/actions/setup-homebrew@fa50f0d55f868c116e78d01ecb9321abd71b54f0 # master
+        uses: Homebrew/actions/setup-homebrew@24e465905d82014ef1220158da9e9d369425407b # master
 
       - name: Set up git
-        uses: Homebrew/actions/git-user-config@fa50f0d55f868c116e78d01ecb9321abd71b54f0 # master
+        uses: Homebrew/actions/git-user-config@24e465905d82014ef1220158da9e9d369425407b # master
 
       - name: Pull bottles
         id: pr-pull
         run: brew pr-pull --debug --retain-bottle-dir --no-upload --tap="$GITHUB_REPOSITORY" "$PULL_REQUEST"
 
       - name: Generate build provenance
-        uses: actions/attest-build-provenance@173725a1209d09b31f9d30a3890cf2757ebbff0d # v1.1.2
+        uses: actions/attest-build-provenance@49df96e17e918a15956db358890b08e61c704919 # v1.2.0
         with:
           subject-path: "${{ steps.pr-pull.outputs.bottle_path }}/*.tar.gz"
 
@@ -48,7 +48,7 @@ jobs:
         run: brew pr-upload --debug
 
       - name: Push commits
-        uses: Homebrew/actions/git-try-push@fa50f0d55f868c116e78d01ecb9321abd71b54f0 # master
+        uses: Homebrew/actions/git-try-push@24e465905d82014ef1220158da9e9d369425407b # master
         with:
           token: ${{ github.token }}
           branch: main
