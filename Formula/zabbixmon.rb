@@ -1,8 +1,8 @@
 class Zabbixmon < Formula
   desc "CLI application to show currents alerts on Zabbix"
   homepage "https://github.com/nikaro/zabbixmon"
-  url "https://github.com/nikaro/zabbixmon/archive/refs/tags/0.9.8.tar.gz"
-  sha256 "0a738690cff7b21f9d69bdfd00d8f0223ef623967f722fd5799220e994f83b02"
+  url "https://github.com/nikaro/zabbixmon/archive/refs/tags/0.9.9.tar.gz"
+  sha256 "251dd2d2e121d55e0d2dde6a37b241f79226223c8fcc8e7e64873d2f3ab000e9"
   license "GPL-3.0-or-later"
 
   bottle do
