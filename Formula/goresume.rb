@@ -6,9 +6,9 @@ class Goresume < Formula
   license "MIT"
 
   bottle do
-    root_url "https://github.com/nikaro/homebrew-tap/releases/download/goresume-0.3.10"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma: "7e4f7dfe02585b6083561edb9d18f7fd5bc7d45813bd70aeaf9ddc272faefa1d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "6fcff850181e26130f3c70d36c6fa260e5d45d0f40d49e37fb08d592c4e9bb7c"
+    root_url "https://github.com/nikaro/homebrew-tap/releases/download/goresume-0.3.11"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma: "779492a7499ab4874e5c0b2912ecea20aeadc924c665f38c1da58dcfcbe1291d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "525637399360f850af0924070e8f47e21003faa241aeefeff089ea274eed33f8"
   end
 
   depends_on "go" => :build
