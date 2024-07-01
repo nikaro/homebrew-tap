@@ -6,9 +6,9 @@ class Zabbixmon < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    root_url "https://github.com/nikaro/homebrew-tap/releases/download/zabbixmon-0.9.9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma: "a9ff4cd2a31046dded4cddac49b6e2ac78e36e9185985540fc24758bc9e2d50a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "8a29362534dfdd6c4e4c326cce9f2245389369c9fb86e9dbd2f828b40714256c"
+    root_url "https://github.com/nikaro/homebrew-tap/releases/download/zabbixmon-0.9.10"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma: "e159d9bb4487e06a0ba938e15723eba5e308edc78d27b7e2f18b261e569cac9a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "204ad6c0bbc676ac77b8436cb386c6129aaaab9097adaa855236d08fee9b572a"
   end
 
   depends_on "go" => :build
