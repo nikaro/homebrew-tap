@@ -1,8 +1,8 @@
 class Goresume < Formula
   desc "Build HTML/PDF resume from JSON/YAML/TOML"
   homepage "https://github.com/nikaro/goresume"
-  url "https://github.com/nikaro/goresume/archive/refs/tags/0.3.10.tar.gz"
-  sha256 "91c448b76c124f281b6b080b3ba9b4c6af3d61c79a5ec4b013861878079b1f58"
+  url "https://github.com/nikaro/goresume/archive/refs/tags/0.3.11.tar.gz"
+  sha256 "88ae7a92b2034506eb65816f05139c8d610c7fc4c0b74d2978e777fd6630f40d"
   license "MIT"
 
   bottle do
