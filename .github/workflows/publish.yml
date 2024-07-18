@@ -1,3 +1,5 @@
+---
+
 name: Publish
 
 on:
@@ -8,7 +10,7 @@ on:
 jobs:
   pr-pull:
     if: contains(github.event.pull_request.labels.*.name, 'pr-pull')
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     permissions:
       actions: write
       attestations: write
@@ -27,17 +29,17 @@ jobs:
     steps:
       - name: Set up Homebrew
         id: set-up-homebrew
-        uses: Homebrew/actions/setup-homebrew@f431f4234f84a6abc61649940bbd826437428679 # master
+        uses: Homebrew/actions/setup-homebrew@master
 
       - name: Set up git
-        uses: Homebrew/actions/git-user-config@f431f4234f84a6abc61649940bbd826437428679 # master
+        uses: Homebrew/actions/git-user-config@master
 
       - name: Pull bottles
         id: pr-pull
         run: brew pr-pull --debug --retain-bottle-dir --no-upload --tap="$GITHUB_REPOSITORY" "$PULL_REQUEST"
 
       - name: Generate build provenance
-        uses: actions/attest-build-provenance@5e9cb68e95676991667494a6a4e59b8a2f13e1d0 # v1.3.3
+        uses: actions/attest-build-provenance@main
         with:
           subject-path: "${{ steps.pr-pull.outputs.bottle_path }}/*.tar.gz"
 
@@ -48,7 +50,7 @@ jobs:
         run: brew pr-upload --debug
 
       - name: Push commits
-        uses: Homebrew/actions/git-try-push@f431f4234f84a6abc61649940bbd826437428679 # master
+        uses: Homebrew/actions/git-try-push@master
         with:
           token: ${{ github.token }}
           branch: main
