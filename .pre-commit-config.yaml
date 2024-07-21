@@ -46,6 +46,6 @@ repos:
       - id: yamlfmt
 
   - repo: https://github.com/commitizen-tools/commitizen
-    rev: v3.27.0
+    rev: v3.28.0
     hooks:
       - id: commitizen
