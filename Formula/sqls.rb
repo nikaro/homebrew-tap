@@ -6,9 +6,9 @@ class Sqls < Formula
   license "MIT"
 
   bottle do
-    root_url "https://github.com/nikaro/homebrew-tap/releases/download/sqls-0.2.27"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma: "6b3aa8781bc80f031f5e8ea65c330b39c6a9db04ccf7600edff12a96163a07a4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "2bda08d9011ab6b0fc2fae44ee0520149f4d5d221c6c559d7a6ad2a276f3dea1"
+    root_url "https://github.com/nikaro/homebrew-tap/releases/download/sqls-0.2.28"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma: "65df31ba1eed33059edde2c9690c9f48150e9b42e0bafd1ddd55d4de037c6f2f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "70c60349a1ec61bf2823cdd1a81699e8087c1bfc1ec9fa6f6516eb965439c959"
   end
 
   depends_on "go" => :build
