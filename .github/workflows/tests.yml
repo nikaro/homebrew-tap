@@ -21,6 +21,17 @@ jobs:
         id: set-up-homebrew
         uses: Homebrew/actions/setup-homebrew@master
 
+      - name: Add required packages
+        if: matrix.os == 'ubuntu-latest'
+        run: |
+          packages=(
+            libbtrfs-dev  # required by kubeclarity
+            libdevmapper-dev  # required by kubeclarity
+            libdevmapper1.02.1  # required by kubeclarity
+          )
+          # shellcheck disable=SC2068
+          sudo apt install ${packages[@]}
+
       - name: Cache Homebrew Bundler RubyGems
         id: cache
         uses: actions/cache@main
