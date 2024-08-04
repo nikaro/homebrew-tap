@@ -39,7 +39,7 @@ jobs:
         run: brew pr-pull --debug --retain-bottle-dir --no-upload --tap="$GITHUB_REPOSITORY" "$PULL_REQUEST"
 
       - name: Generate build provenance
-        uses: actions/attest-build-provenance@main
+        uses: actions/attest-build-provenance@v1
         with:
           subject-path: "${{ steps.pr-pull.outputs.bottle_path }}/*.tar.gz"
 
