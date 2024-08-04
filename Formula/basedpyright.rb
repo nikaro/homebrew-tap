@@ -8,6 +8,12 @@ class Basedpyright < Formula
   license "MIT"
   revision 1
 
+  bottle do
+    root_url "https://github.com/nikaro/homebrew-tap/releases/download/basedpyright-1.15.1_1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma: "d1063d0d0e72077f60fc246c40ab0243ee1a233a4bbc4516ed3ea0789250ce09"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "4abfed0ccec4ae6a751df0a5e63c705cf15fefe7cdbb239ece9aeebf43d6bf14"
+  end
+
   depends_on "cmake" => :build
   depends_on "rust" => :build
   depends_on "python@3.12"
