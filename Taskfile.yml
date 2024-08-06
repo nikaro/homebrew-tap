@@ -1,0 +1,15 @@
+version: '3'
+
+set: [errexit, nounset, pipefail]
+shopt: [globstar]
+
+includes:
+  lint: .taskfiles/lint.yml
+  format: .taskfiles/format.yml
+
+tasks:
+  init:
+    desc: Initialize repositry
+    cmds:
+      - git config core.hooksPath .githooks
+      - git config commit.template .gitmessage
