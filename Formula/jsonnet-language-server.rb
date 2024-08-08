@@ -6,9 +6,9 @@ class JsonnetLanguageServer < Formula
   license "AGPL-3.0-only"
 
   bottle do
-    root_url "https://github.com/nikaro/homebrew-tap/releases/download/jsonnet-language-server-0.13.1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma: "7bfa359dadd0fa7b1aadfb2819a53872189a2501a7358d2500bc4256e67043ae"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "8d95133e1134048f05c4d55db7c2ff1ffb218c008a21e40ff0dd705695d85c13"
+    root_url "https://github.com/nikaro/homebrew-tap/releases/download/jsonnet-language-server-0.14.0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma: "cc3901a7be514582fd9f7e343b9c2cf0e3f1c3c9515fd9c3e6c042b5bbaf8750"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "42a23784ce8f86ec5bb0306dae1919268771cdc549e574fe1109915749716518"
   end
 
   depends_on "go" => :build
