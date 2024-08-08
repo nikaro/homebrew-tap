@@ -18,4 +18,16 @@ class Goimports < Formula
       system "go", "build", *std_go_args
     end
   end
+
+  test do
+    (testpath/"main.go").write <<~EOS
+      package main
+
+      func main() {
+        fmt.Println("hello")
+      }
+    EOS
+
+    assert_match(/\+import "fmt"/, shell_output("#{bin}/goimports -d #{testpath}/main.go"))
+  end
 end
