@@ -3,10 +3,9 @@ class Basedpyright < Formula
 
   desc "Pyright fork with various improvements and built-in pylance features"
   homepage "https://github.com/DetachHead/basedpyright"
-  url "https://files.pythonhosted.org/packages/10/56/0b764d7a0495a727057657d9541833be13467a0c36b8970cbe4ed8b9891a/basedpyright-1.15.1.tar.gz"
-  sha256 "76e67453a3c3839506952de9f620d55aa1e3fcf2dbb276405df878bc83a185ee"
+  url "https://files.pythonhosted.org/packages/19/26/f79e1e1311d1d0742141b5bee44ca0891b4624ecd33f3f0ae8ef68625e84/basedpyright-1.15.2.tar.gz"
+  sha256 "c07f4ad7d5b2a2d3194ecdfa311b7a58da8670144873ff54f0d2d40a5d1b5944"
   license "MIT"
-  revision 1
 
   bottle do
     root_url "https://github.com/nikaro/homebrew-tap/releases/download/basedpyright-1.15.1_1"
