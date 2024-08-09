@@ -1,29 +1,20 @@
-class Basedpyright < Formula
-  include Language::Python::Virtualenv
+require "language/node"
 
+class Basedpyright < Formula
   desc "Pyright fork with various improvements and built-in pylance features"
   homepage "https://github.com/DetachHead/basedpyright"
-  url "https://files.pythonhosted.org/packages/19/26/f79e1e1311d1d0742141b5bee44ca0891b4624ecd33f3f0ae8ef68625e84/basedpyright-1.15.2.tar.gz"
-  sha256 "c07f4ad7d5b2a2d3194ecdfa311b7a58da8670144873ff54f0d2d40a5d1b5944"
+  url "https://registry.npmjs.org/basedpyright/-/basedpyright-1.15.2.tgz"
+  sha256 "c9e0dcceb4c09c8a5426eb544c1c1991fd27415f313c12e594e1c3373bea6aa4"
   license "MIT"
+  revision 1
+  head "https://github.com/detachhead/basedpyright.git", branch: "main"
 
-  bottle do
-    root_url "https://github.com/nikaro/homebrew-tap/releases/download/basedpyright-1.15.2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma: "be6b3a20970b587d13d462af97a76e9da162342bcec990964a1f27e5e111bc96"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "20f4be34710cbd8249dcb736e47f20458f6cf919f7745c07ef5c23f5f3120f64"
-  end
-
-  depends_on "cmake" => :build
-  depends_on "rust" => :build
-  depends_on "python@3.12"
-
-  resource "nodejs-wheel-binaries" do
-    url "https://files.pythonhosted.org/packages/36/7a/9c3e424382eda040b01f344b7a64b11d2e4decc2c6d381f7ca68751603f8/nodejs_wheel_binaries-20.16.0.tar.gz"
-    sha256 "85649da01bb3d0d3c9237d28545180254cda5417b4e2c219f53face0103fb2bf"
-  end
+  depends_on "node"
 
   def install
-    virtualenv_install_with_resources
+    system "npm", "install", *std_npm_args
+    bin.install_symlink libexec/"bin/pyright" => "basedpyright"
+    bin.install_symlink libexec/"bin/pyright-langserver" => "basedpyright-langserver"
   end
 
   test do
