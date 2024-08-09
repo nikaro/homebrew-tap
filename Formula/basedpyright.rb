@@ -9,6 +9,12 @@ class Basedpyright < Formula
   revision 1
   head "https://github.com/detachhead/basedpyright.git", branch: "main"
 
+  bottle do
+    root_url "https://github.com/nikaro/homebrew-tap/releases/download/basedpyright-1.15.2_1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma: "9830c2503f2a5b4330e8d165d8e1c6cab3297ebba8e9480ac7fea72067df0d84"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "045d9936beb4da578bedfe6003bc040559520b7f262ce65cbb9fab9cb1c19766"
+  end
+
   depends_on "node"
 
   def install
