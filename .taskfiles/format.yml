@@ -4,20 +4,21 @@ tasks:
   default:
     label: format
     desc: Run formatters
-    deps: [format_yaml, format_sh, format_brew, format_json]
+    deps:
+      - json
+      - sh
+      - yaml
 
-  format_yaml:
-    desc: Format YAML files
-    internal: true
+  json:
+    desc: Format JSON files
     sources:
-      - ./**/*.yml
-      - ./**/*.yaml
+      - ./**/*.json
     cmds:
-      - yamlfmt .
+      - for: sources
+        cmd: prettier --write --parser json {{.ITEM}}
 
-  format_sh:
+  sh:
     desc: Format sh/bash files
-    internal: true
     sources:
       - ./**/*.sh
       - ./.githooks/commit-msg
@@ -25,19 +26,10 @@ tasks:
     cmds:
       - shfmt --write .
 
-  format_json:
-    desc: Format JSON files
-    internal: true
+  yaml:
+    desc: Format YAML files
     sources:
-      - ./**/*.json
+      - ./**/*.yml
+      - ./**/*.yaml
     cmds:
-      - for: sources
-        cmd: prettier --write --parser json {{.ITEM}}
-
-  format_brew:
-    desc: Format Hombrew formulae
-    internal: true
-    sources:
-      - ./Formula/*.rb
-    cmds:
-      - brew style --fix .
+      - yamlfmt .

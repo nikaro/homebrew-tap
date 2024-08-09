@@ -5,24 +5,39 @@ tasks:
     label: lint
     desc: Run linters
     cmds:
-      - task: lint_renovate
-      - task: lint_sh
-      - task: lint_gha
-      - task: lint_yaml
-      - task: lint_json
-      - task: lint_brew
+      - task: gha
+      - task: json
+      - task: renovate
+      - task: sh
+      - task: yaml
 
-  lint_renovate:
+  gha:
+    desc: Lint GitHub Actions workflows
+    sources:
+      - ./.github/workflows/*.yml
+    cmds:
+      - check-jsonschema --builtin-schema vendor.github-workflows ./.github/workflows/*.yml
+      - actionlint
+
+  json:
+    desc: Lint JSON files
+    sources:
+      - ./**/*.json
+    cmds:
+      - for: sources
+        cmd: jq empty {{.ITEM}}
+      - for: sources
+        cmd: prettier --check --parser json {{.ITEM}}
+
+  renovate:
     desc: Lint Renovate configuration
-    internal: true
     sources:
       - ./.github/renovate*.json
     cmds:
       - check-jsonschema --builtin-schema vendor.renovate ./.github/renovate*.json
 
-  lint_sh:
+  sh:
     desc: Lint sh/bash files
-    internal: true
     sources:
       - ./**/*.sh
       - ./.githooks/commit-msg
@@ -32,40 +47,11 @@ tasks:
       - for: sources
         cmd: shellcheck {{.ITEM}}
 
-  lint_gha:
-    desc: Lint GitHub Actions workflows
-    internal: true
-    sources:
-      - ./.github/workflows/*.yml
-    cmds:
-      - check-jsonschema --builtin-schema vendor.github-workflows ./.github/workflows/*.yml
-      - actionlint
-
-  lint_yaml:
+  yaml:
     desc: Lint YAML files
-    internal: true
     sources:
       - ./**/*.yml
       - ./**/*.yaml
     cmds:
       - yamlfmt -lint .
       - yamllint .
-
-  lint_json:
-    desc: Lint JSON files
-    internal: true
-    sources:
-      - ./**/*.json
-    cmds:
-      - for: sources
-        cmd: jq empty {{.ITEM}}
-      - for: sources
-        cmd: prettier --check --parser json {{.ITEM}}
-
-  lint_brew:
-    desc: Lint Hombrew formulae
-    internal: true
-    sources:
-      - ./Formula/*.rb
-    cmds:
-      - brew style .
