@@ -5,10 +5,10 @@ shopt: [globstar]
 
 includes:
   lint:
-    taskfile: .taskfiles/lint.yml
+    taskfile: https://github.com/nikaro/meta/raw/main/taskfiles/lint.yml
     internal: true
   format:
-    taskfile: .taskfiles/format.yml
+    taskfile: https://github.com/nikaro/meta/raw/main/taskfiles/format.yml
     internal: true
 
 tasks:

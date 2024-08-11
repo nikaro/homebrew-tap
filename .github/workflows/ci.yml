@@ -8,6 +8,9 @@ on:
   workflow_call:
   workflow_dispatch:
 
+env:
+  TASK_X_REMOTE_TASKFILES: 1
+
 jobs:
   lint:
     name: Lint
@@ -24,6 +27,7 @@ jobs:
           /home/linuxbrew/.linuxbrew/bin/brew install \
             actionlint \
             check-jsonschema \
+            fd \
             go-task \
             jq \
             prettier \
@@ -33,4 +37,4 @@ jobs:
             yamllint \
 
       - name: Lint
-        run: task lint
+        run: task lint --yes
