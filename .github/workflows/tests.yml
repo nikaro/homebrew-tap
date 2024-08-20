@@ -15,34 +15,58 @@ jobs:
         os: [ubuntu-latest, macos-latest]
     runs-on: ${{ matrix.os }}
     steps:
-      - name: Set up Homebrew
-        id: set-up-homebrew
-        uses: Homebrew/actions/setup-homebrew@master
+      - name: Checkout
+        env:
+          BRANCH: ${{ github.head_ref || github.ref_name }}
+          GH_TOKEN: ${{ github.token }}
+        run: gh repo clone ${{ github.repository }} ${{ github.workspace }} -- --depth=1 --branch "$BRANCH"
+
+      - name: Add brew to PATH
+        shell: bash
+        run: |-
+          {
+            echo "/home/linuxbrew/.linuxbrew/sbin";
+            echo "/home/linuxbrew/.linuxbrew/bin";
+          } >> "$GITHUB_PATH"
+
+      - name: Setup Homebrew Bundler RubyGems cache
+        id: gems-cache
+        run: |-
+          GEMS_PATH="$(brew --repo)/Library/Homebrew/vendor/bundle/ruby/"
+          GEMS_HASH="$(shasum -a 256 "$(brew --repo)/Library/Homebrew/Gemfile.lock" | cut -f1 -d' ')"
+          {
+            echo "gems-path=$GEMS_PATH";
+            echo "gems-hash=$GEMS_HASH";
+          } >> "$GITHUB_OUTPUT"
 
       - name: Cache Homebrew Bundler RubyGems
         id: cache
-        uses: actions/cache@v4
+        uses: actions/cache@main
         with:
-          path: ${{ steps.set-up-homebrew.outputs.gems-path }}
-          key: ${{ runner.os }}-rubygems-${{ steps.set-up-homebrew.outputs.gems-hash }}
+          path: ${{ steps.gems-cache.outputs.gems-path }}
+          key: ${{ runner.os }}-rubygems-${{ steps.gems-cache.outputs.gems-hash }}
           restore-keys: ${{ runner.os }}-rubygems-
 
       - name: Install Homebrew Bundler RubyGems
         if: steps.cache.outputs.cache-hit != 'true'
         run: brew install-bundler-gems
 
-      - run: brew test-bot --only-cleanup-before
+      - name: Run the pre-cleanup step
+        run: brew test-bot --only-cleanup-before
 
-      - run: brew test-bot --only-setup
+      - name: Run the local system check step
+        run: brew test-bot --only-setup
 
-      - run: brew test-bot --only-tap-syntax
+      - name: Run the tap syntax check step
+        run: brew test-bot --only-tap-syntax
 
-      - run: brew test-bot --only-formulae
+      - name: Run the formulae steps
         if: github.event_name == 'pull_request'
+        run: brew test-bot --only-formulae
 
       - name: Upload bottles as artifact
         if: always() && github.event_name == 'pull_request'
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@main
         with:
           name: bottles_${{ matrix.os }}
           path: "*.bottle.*"

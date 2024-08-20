@@ -19,12 +19,22 @@ jobs:
       contents: read
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        env:
+          BRANCH: ${{ github.head_ref || github.ref_name }}
+          GH_TOKEN: ${{ github.token }}
+        run: gh repo clone ${{ github.repository }} ${{ github.workspace }} -- --depth=1 --branch "$BRANCH"
+
+      - name: Add brew to PATH
+        shell: bash
+        run: |-
+          {
+            echo "/home/linuxbrew/.linuxbrew/sbin";
+            echo "/home/linuxbrew/.linuxbrew/bin";
+          } >> "$GITHUB_PATH"
 
       - name: Install tools
         run: |
-          echo "/home/linuxbrew/.linuxbrew/bin" >> "$GITHUB_PATH"
-          /home/linuxbrew/.linuxbrew/bin/brew install \
+          brew install \
             actionlint \
             check-jsonschema \
             fd \
