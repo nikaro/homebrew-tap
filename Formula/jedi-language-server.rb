@@ -9,6 +9,12 @@ class JediLanguageServer < Formula
   sha256 "af010173f9f62dfcd3b3f4e2ea0ea3020fb4285c9b6b18b481aa978f28b5a36a"
   license "MIT"
 
+  bottle do
+    root_url "https://github.com/nikaro/homebrew-tap/releases/download/jedi-language-server-0.41.4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma: "d8eb1036693c60459347d8280937a127dfe48dd23f2a0bb58af945e325ce99fb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "cfa19f17c7f0000aed6fa554b3ab0a344275504ca9439f662d3432f1aeba5309"
+  end
+
   depends_on "python"
 
   resource "attrs" do
