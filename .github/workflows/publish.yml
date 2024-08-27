@@ -25,24 +25,12 @@ jobs:
       HOMEBREW_GITHUB_PACKAGES_USER: ${{ github.actor }}
       PULL_REQUEST: ${{ github.event.pull_request.number }}
     steps:
-      - name: Checkout
-        env:
-          BRANCH: ${{ github.head_ref || github.ref_name }}
-          GH_TOKEN: ${{ github.token }}
-        run: gh repo clone ${{ github.repository }} ${{ github.workspace }} -- --depth=1 --branch "$BRANCH"
+      - name: Set up Homebrew
+        id: set-up-homebrew
+        uses: Homebrew/actions/setup-homebrew@master
 
-      - name: Configure git for a user
-        run: |-
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-
-      - name: Add brew to PATH
-        shell: bash
-        run: |-
-          {
-            echo "/home/linuxbrew/.linuxbrew/sbin";
-            echo "/home/linuxbrew/.linuxbrew/bin";
-          } >> "$GITHUB_PATH"
+      - name: Set up git
+        uses: Homebrew/actions/git-user-config@master
 
       - name: Pull bottles
         id: pr-pull
@@ -50,14 +38,15 @@ jobs:
 
       - name: Upload bottles to GitHub Packages
         working-directory: ${{ steps.pr-pull.outputs.bottle_path }}
+        env:
+          REPO_PATH: ${{ steps.set-up-homebrew.outputs.repository-path }}
         run: brew pr-upload --debug
 
       - name: Push commits
-        run: |-
-          credentials=$(echo -n "x-access-token:${{ github.token }}" | base64)
-          git config --local http.https://github.com/.extraheader "AUTHORIZATION: basic $credentials"
-          git pull --rebase --autostash origin main
-          git push
+        uses: Homebrew/actions/git-try-push@master
+        with:
+          token: ${{ github.token }}
+          branch: main
 
       - name: Delete branch
         if: github.event.pull_request.head.repo.fork == false

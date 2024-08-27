@@ -15,41 +15,19 @@ jobs:
         os: [ubuntu-latest, macos-latest]
     runs-on: ${{ matrix.os }}
     steps:
-      - name: Checkout
-        env:
-          BRANCH: ${{ github.head_ref || github.ref_name }}
-          GH_TOKEN: ${{ github.token }}
-        run: gh repo clone ${{ github.repository }} ${{ github.workspace }} -- --depth=1 --branch "$BRANCH"
+      - name: Set up Homebrew
+        id: set-up-homebrew
+        uses: Homebrew/actions/setup-homebrew@master
 
-      - name: Configure git for a user
-        run: |-
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-
-      - name: Add brew to PATH
-        shell: bash
-        run: |-
-          {
-            echo "/home/linuxbrew/.linuxbrew/sbin";
-            echo "/home/linuxbrew/.linuxbrew/bin";
-          } >> "$GITHUB_PATH"
-
-      - name: Setup Homebrew Bundler RubyGems cache
-        id: gems-cache
-        run: |-
-          GEMS_PATH="$(brew --repo)/Library/Homebrew/vendor/bundle/ruby/"
-          GEMS_HASH="$(shasum -a 256 "$(brew --repo)/Library/Homebrew/Gemfile.lock" | cut -f1 -d' ')"
-          {
-            echo "gems-path=$GEMS_PATH";
-            echo "gems-hash=$GEMS_HASH";
-          } >> "$GITHUB_OUTPUT"
+      - name: Set up git
+        uses: Homebrew/actions/git-user-config@master
 
       - name: Cache Homebrew Bundler RubyGems
         id: cache
         uses: actions/cache@main
         with:
-          path: ${{ steps.gems-cache.outputs.gems-path }}
-          key: ${{ runner.os }}-rubygems-${{ steps.gems-cache.outputs.gems-hash }}
+          path: ${{ steps.set-up-homebrew.outputs.gems-path }}
+          key: ${{ runner.os }}-rubygems-${{ steps.set-up-homebrew.outputs.gems-hash }}
           restore-keys: ${{ runner.os }}-rubygems-
 
       - name: Install Homebrew Bundler RubyGems
