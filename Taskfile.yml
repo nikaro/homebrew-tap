@@ -26,12 +26,12 @@ tasks:
 
   lint:brew:
     desc: Lint Hombrew formulae
-    internal: true
     sources:
+      - ./Casks/*.rb
       - ./Formula/*.rb
     cmds:
-      - brew style .
-      - brew rubocop --lint .
+      - brew style ./Casks/*.rb ./Formula/*.rb
+      - brew rubocop --lint ./Casks/*.rb ./Formula/*.rb
 
   format:
     desc: Run formatters
@@ -41,9 +41,9 @@ tasks:
 
   format:brew:
     desc: Format Hombrew formulae
-    internal: true
     sources:
+      - ./Casks/*.rb
       - ./Formula/*.rb
     cmds:
-      - brew style --fix .
-      - brew rubocop --autocorrect .
+      - brew style --fix ./Casks/*.rb ./Formula/*.rb
+      - brew rubocop --autocorrect ./Casks/*.rb ./Formula/*.rb
