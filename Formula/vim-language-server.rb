@@ -1,3 +1,5 @@
+# typed: false
+
 require "language/node"
 
 class VimLanguageServer < Formula

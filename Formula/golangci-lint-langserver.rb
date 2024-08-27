@@ -1,3 +1,5 @@
+# typed: false
+
 class GolangciLintLangserver < Formula
   desc "Golangci-lint language server"
   homepage "https://github.com/nametake/golangci-lint-langserver"

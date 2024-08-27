@@ -1,3 +1,5 @@
+# typed: false
+
 class Gopy < Formula
   desc "CPython extension module generator from a go package"
   homepage "https://github.com/go-python/gopy"

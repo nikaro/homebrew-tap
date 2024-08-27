@@ -1,3 +1,5 @@
+# typed: false
+
 class Sqls < Formula
   desc "SQL language server written in Go"
   homepage "https://github.com/sqls-server/sqls"

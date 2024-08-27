@@ -1,3 +1,5 @@
+# typed: false
+
 class JsonnetLanguageServer < Formula
   desc "Language Server Protocol (LSP) server for Jsonnet"
   homepage "https://github.com/grafana/jsonnet-language-server"

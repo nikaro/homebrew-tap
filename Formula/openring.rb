@@ -1,3 +1,5 @@
+# typed: false
+
 class Openring < Formula
   desc "Webring for static site generators"
   homepage "https://sr.ht/~sircmpwn/openring/"

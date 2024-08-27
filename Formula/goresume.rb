@@ -1,3 +1,5 @@
+# typed: false
+
 class Goresume < Formula
   desc "Build HTML/PDF resume from JSON/YAML/TOML"
   homepage "https://github.com/nikaro/goresume"
