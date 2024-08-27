@@ -21,6 +21,11 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: gh repo clone ${{ github.repository }} ${{ github.workspace }} -- --depth=1 --branch "$BRANCH"
 
+      - name: Configure git for a user
+        run: |-
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
       - name: Add brew to PATH
         shell: bash
         run: |-
