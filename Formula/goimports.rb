@@ -3,8 +3,8 @@
 class Goimports < Formula
   desc "Go formatter that additionally inserts import statements"
   homepage "https://pkg.go.dev/golang.org/x/tools/cmd/goimports"
-  url "https://github.com/golang/tools/archive/refs/tags/v0.24.0.tar.gz"
-  sha256 "7ebfbdf31af28c4fd3a6cf1dec7bbfdd83e5292ae1ba5eb8825f8d90221a66fc"
+  url "https://github.com/golang/tools/archive/refs/tags/v0.25.0.tar.gz"
+  sha256 "c536188f5db744371f526f3059960945ed580b3ee60553a4f01956251ab36d20"
   license "BSD-3-Clause"
 
   bottle do
@@ -13,7 +13,7 @@ class Goimports < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux: "134e305c72335989625ecb42ca7100cf0494cab447f420c6358c8323fe65d3c0"
   end
 
-  depends_on "go" => :build
+  depends_on "go"
 
   def install
     chdir "cmd/goimports" do
