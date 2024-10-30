@@ -8,9 +8,9 @@ class Goimports < Formula
   license "BSD-3-Clause"
 
   bottle do
-    root_url "https://github.com/nikaro/homebrew-tap/releases/download/goimports-0.25.0"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma: "7220924fd5a52366d80487860805b591d456922a9664f2148ed07a53e34b2586"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "229840a1dc7a183dc2f22fb664d9da05ae784dc23972b47727faa064460bb536"
+    root_url "https://github.com/nikaro/homebrew-tap/releases/download/goimports-0.26.0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma: "b8e6e7267f65d11c66eb3c0366988f9aab9305b90f6b5e3b63420ef6899b8a99"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "888db5dc8c6b979c05f2c1f692e22ac624e446e02f91900b39dd5b9198cc0ed1"
   end
 
   depends_on "go"
