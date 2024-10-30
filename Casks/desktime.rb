@@ -15,6 +15,7 @@ cask "desktime" do
   livecheck do
     url :url
     strategy :header_match
+    regex /filename=DeskTime-(\d+(?:\.\d+)+)-(?:x64|arm64)\.dmg/
   end
 
   app "DeskTime.app"
