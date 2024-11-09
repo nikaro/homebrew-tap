@@ -5,8 +5,8 @@ class JediLanguageServer < Formula
 
   desc "Language server for Jedi"
   homepage "https://github.com/pappasam/jedi-language-server"
-  url "https://files.pythonhosted.org/packages/34/f9/c24a60c08624c042600ef3c115ff744829491a0ab5631eba0377c2ca1882/jedi_language_server-0.41.4.tar.gz"
-  sha256 "af010173f9f62dfcd3b3f4e2ea0ea3020fb4285c9b6b18b481aa978f28b5a36a"
+  url "https://files.pythonhosted.org/packages/93/d1/5844be2a4959a8d0b6ab21703e0242719c868aedb6663f1f29d4438ed966/jedi_language_server-0.42.0.tar.gz"
+  sha256 "db818d956c16f79a32bbde4c6f7189282725977246199b09ac8155429432632c"
   license "MIT"
 
   bottle do
@@ -23,8 +23,8 @@ class JediLanguageServer < Formula
   end
 
   resource "cattrs" do
-    url "https://files.pythonhosted.org/packages/1e/57/c6ccd22658c4bcb3beb3f1c262e1f170cf136e913b122763d0ddd328d284/cattrs-23.2.3.tar.gz"
-    sha256 "a934090d95abaa9e911dac357e3a8699e0b4b14f8529bcc7d2b1ad9d51672b9f"
+    url "https://files.pythonhosted.org/packages/64/65/af6d57da2cb32c076319b7489ae0958f746949d407109e3ccf4d115f147c/cattrs-24.1.2.tar.gz"
+    sha256 "8028cfe1ff5382df59dd36474a86e02d817b06eaf8af84555441bac915d2ef85"
   end
 
   resource "docstring-to-markdown" do
