@@ -1,9 +1,9 @@
 cask "desktime" do
   url_param = on_arch_conditional arm: "?m1", intel: ""
 
-  version "6.0.4"
-  sha256 arm:   "c8049809c068ec433f9d8912af889f36482de681a57e716d71133d1f032db51a",
-         intel: "4281831da6db1eaab32848809a69dbfdc14113eb5de1b3080888576a7a56db0e"
+  version "6.0.6"
+  sha256 arm:   "2378166310543ec29ff4b1699bc44ad373e619a34274849f9915052f7b0714c0",
+         intel: "0a17e5c5b3260b4800b1dc92e815f835be81a56f782bbbd9e0e93fe75761d614"
 
   url "https://desktime.com/updates/electron/mac#{url_param}"
   name "DeskTime"
