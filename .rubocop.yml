@@ -49,12 +49,12 @@ Layout/LineLength:
     - "#{language}"
     - "#{version."
     - ' "/Library/Application Support/'
-    - "\"/Library/Caches/"
-    - "\"/Library/PreferencePanes/"
+    - '"/Library/Caches/'
+    - '"/Library/PreferencePanes/'
     - ' "~/Library/Application Support/'
-    - "\"~/Library/Caches/"
-    - "\"~/Library/Containers"
-    - "\"~/Application Support"
+    - '"~/Library/Caches/'
+    - '"~/Library/Containers'
+    - '"~/Application Support'
     - " was verified as official when first introduced to the cask"
 Layout/SpaceAroundOperators:
   Enabled: false
