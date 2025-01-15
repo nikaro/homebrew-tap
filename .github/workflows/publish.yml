@@ -7,7 +7,7 @@ on:
 
 jobs:
   pr-pull:
-    if: contains(github.event.pull_request.labels.*.name, 'pr-pull')
+    if: contains(github.event.pull_request.labels.*.name, 'merge')
     runs-on: ubuntu-latest
     permissions:
       actions: write
