@@ -1,3 +1,5 @@
+# typed: false
+
 cask "desktime" do
   url_param = on_arch_conditional arm: "?m1", intel: ""
 
