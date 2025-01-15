@@ -5,8 +5,8 @@ class JediLanguageServer < Formula
 
   desc "Language server for Jedi"
   homepage "https://github.com/pappasam/jedi-language-server"
-  url "https://files.pythonhosted.org/packages/93/d1/5844be2a4959a8d0b6ab21703e0242719c868aedb6663f1f29d4438ed966/jedi_language_server-0.42.0.tar.gz"
-  sha256 "db818d956c16f79a32bbde4c6f7189282725977246199b09ac8155429432632c"
+  url "https://files.pythonhosted.org/packages/6a/38/11387647334652a1c9af65390ed4719d64ce21308451873749dad8faef1f/jedi_language_server-0.43.1.tar.gz"
+  sha256 "c693a2b62ac053b1b2b0a14efaf963c2b9f800e02083cc82ccd5c275cd29d7b1"
   license "MIT"
 
   bottle do
@@ -18,8 +18,8 @@ class JediLanguageServer < Formula
   depends_on "python"
 
   resource "attrs" do
-    url "https://files.pythonhosted.org/packages/fc/0f/aafca9af9315aee06a89ffde799a10a582fe8de76c563ee80bbcdc08b3fb/attrs-24.2.0.tar.gz"
-    sha256 "5cfb1b9148b5b086569baec03f20d7b6bf3bcacc9a42bebf87ffaaca362f6346"
+    url "https://files.pythonhosted.org/packages/48/c8/6260f8ccc11f0917360fc0da435c5c9c7504e3db174d5a12a1494887b045/attrs-24.3.0.tar.gz"
+    sha256 "8f5c07333d543103541ba7be0e2ce16eeee8130cb0b3f9238ab904ce1e85baff"
   end
 
   resource "cattrs" do
@@ -33,8 +33,8 @@ class JediLanguageServer < Formula
   end
 
   resource "jedi" do
-    url "https://files.pythonhosted.org/packages/d6/99/99b493cec4bf43176b678de30f81ed003fd6a647a301b9c927280c600f0a/jedi-0.19.1.tar.gz"
-    sha256 "cf0496f3651bc65d7174ac1b7d043eff454892c708a87d1b683e57b569927ffd"
+    url "https://files.pythonhosted.org/packages/72/3a/79a912fbd4d8dd6fbb02bf69afd3bb72cf0c729bb3063c6f4498603db17a/jedi-0.19.2.tar.gz"
+    sha256 "4770dc3de41bde3966b02eb84fbcf557fb33cce26ad23da12c742fb50ecb11f0"
   end
 
   resource "lsprotocol" do
