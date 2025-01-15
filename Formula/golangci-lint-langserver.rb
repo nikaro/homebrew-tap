@@ -8,9 +8,9 @@ class GolangciLintLangserver < Formula
   license "MIT"
 
   bottle do
-    root_url "https://github.com/nikaro/homebrew-tap/releases/download/golangci-lint-langserver-0.0.9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma: "77dd2a2be3d11777c3d8067445a439eec878841a30b94ab44458b9563e7e7cdf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "6c1330f7b3d4881d1d044d3114d9201ef57da05faf376a84c5d5b5afbf8ab80e"
+    root_url "https://github.com/nikaro/homebrew-tap/releases/download/golangci-lint-langserver-0.0.10"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma: "dcdbdf4e77702887d5c1776eb44a61db0d4c5d763013596e7af065be634f9d2c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "178b447399646a0fd23b2a04c90fc52bc22b86ded8351df3e9559db9be6bf126"
   end
 
   depends_on "go" => :build
