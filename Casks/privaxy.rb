@@ -15,7 +15,7 @@ cask "privaxy" do
 
   zap trash: [
     "~/Library/Caches/net.privaxy",
-    "~/Library/Preferences/net.privaxy",
+    "~/Library/Preferences/net.privaxy.plist",
     "~/Library/Saved Application State/net.privaxy.savedState",
     "~/Library/WebKit/net.privaxy",
   ]
