@@ -18,6 +18,8 @@ cask "desktime" do
     regex(/filename=DeskTime-(\d+(?:\.\d+)+)-(?:x64|arm64)\.dmg/)
   end
 
+  disable! date: "2025-03-09", because: "is now available in homebrew/casks"
+
   app "DeskTime.app"
 
   uninstall quit: "DeskTime"
