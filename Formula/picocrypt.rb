@@ -8,9 +8,9 @@ class Picocrypt < Formula
   license "GPL-3.0-only"
 
   bottle do
-    root_url "https://github.com/nikaro/homebrew-tap/releases/download/picocrypt-1.45"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma: "bc500f5ecbed0e5e66ea63effdb89ede6a756c44ebedbbdc1eca9c8eddd6b150"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "d5e80f8761c34862e6fb70039ebeb91823adfbd79e6832134a9acbb9dc83f2e6"
+    root_url "https://github.com/nikaro/homebrew-tap/releases/download/picocrypt-2.10"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma: "717cbb64c37722c6da57db58da1fff527d06eb4d0b6815ec81265893e2a2d526"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "d1fc74f47651968deca2c3e9eee1c9804da34433afb1870cfe68d8745063feed"
   end
 
   depends_on "go" => :build
