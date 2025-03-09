@@ -3,8 +3,8 @@
 class Picocrypt < Formula
   desc "Command-line interface for Picocrypt"
   homepage "https://github.com/Picocrypt/CLI"
-  url "https://github.com/Picocrypt/CLI/archive/refs/tags/1.45.tar.gz"
-  sha256 "77f60e0934fd9a8994ef38d47a92096ae01455ae43bdeb6e79bbb28a7550951c"
+  url "https://github.com/Picocrypt/CLI/archive/refs/tags/2.10.tar.gz"
+  sha256 "e42337bd69f6f15ac221019f540ce177f5910883ee8c03aaea09fc4714d6cbff"
   license "GPL-3.0-only"
 
   bottle do
