@@ -6,6 +6,7 @@ class Tabby < Formula
   url "https://github.com/TabbyML/tabby/archive/refs/tags/v0.26.0.tar.gz"
   sha256 "84dc5a09da77514a2e733000b49e50ba6b2e624ee3ddd6f41527e7961c5ca53c"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/TabbyML/tabby.git", branch: "main"
 
   bottle do
@@ -21,6 +22,8 @@ class Tabby < Formula
   depends_on "openssl@3"
 
   def install
+    mkdir_p bin
+    ln_s Formula["llama.cpp"].libexec/"llama-server", bin/"llama-server"
     system "cargo", "install",
       "--no-default-features", "--features", "prod",
       *std_cargo_args(path: "crates/tabby")
