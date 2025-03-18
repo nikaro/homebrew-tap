@@ -8,6 +8,12 @@ class Tabby < Formula
   license "Apache-2.0"
   head "https://github.com/TabbyML/tabby.git", branch: "main"
 
+  bottle do
+    root_url "https://github.com/nikaro/homebrew-tap/releases/download/tabby-0.26.0"
+    sha256 cellar: :any,                 arm64_sonoma: "36a24c8ff2f1d4df8154c935cf9b09d99afd6aaf0e2b41f75143efd97a1dbe80"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "c2e204d84ccd9349c82df5147c1450cc978e9dcceb362984abdb0c75fb554a76"
+  end
+
   depends_on "llvm" => :build
   depends_on "protobuf" => :build
   depends_on "rust" => :build
