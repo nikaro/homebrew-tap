@@ -22,8 +22,8 @@ class Tabby < Formula
   depends_on "openssl@3"
 
   def install
-    mkdir_p bin
-    ln_s Formula["llama.cpp"].libexec/"llama-server", bin/"llama-server"
+    mkdir_p libexec/"bin"
+    ln_s Formula["llama.cpp"].libexec/"llama-server", libexec/"bin"/"llama-server"
     system "cargo", "install",
       "--no-default-features", "--features", "prod",
       *std_cargo_args(path: "crates/tabby")
