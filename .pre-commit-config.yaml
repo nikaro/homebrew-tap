@@ -1,0 +1,45 @@
+repos:
+  - repo: meta
+    hooks:
+      - id: check-hooks-apply
+      - id: check-useless-excludes
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+      - id: check-added-large-files
+      - id: check-case-conflict
+      - id: check-merge-conflict
+      - id: detect-private-key
+      - id: end-of-file-fixer
+      - id: no-commit-to-branch
+      - id: mixed-line-ending
+      - id: trailing-whitespace
+  - repo: https://github.com/rhysd/actionlint
+    rev: v1.7.7
+    hooks:
+      - id: actionlint
+  - repo: https://github.com/adrienverge/yamllint
+    rev: v1.37.0
+    hooks:
+      - id: yamllint
+  - repo: https://github.com/google/yamlfmt
+    rev: v0.16.0
+    hooks:
+      - id: yamlfmt
+  - repo: local
+    hooks:
+      - id: brew-style
+        name: Check Formula and Casks style
+        language: system
+        types: [ruby]
+        entry: brew style --fix
+      - id: brew-rubocop-autocorrect
+        name: Format Formula and Casks
+        language: system
+        types: [ruby]
+        entry: brew rubocop --autocorrect
+      - id: brew-rubocop-autocorrect
+        name: Lint Formula and Casks
+        language: system
+        types: [ruby]
+        entry: brew rubocop --lint

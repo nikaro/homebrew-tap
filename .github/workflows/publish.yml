@@ -27,10 +27,10 @@ jobs:
     steps:
       - name: Set up Homebrew
         id: set-up-homebrew
-        uses: Homebrew/actions/setup-homebrew@master
+        uses: Homebrew/actions/setup-homebrew@266845213695c3047d210b2e8fbc42ecdaf45802  # master
 
       - name: Set up git
-        uses: Homebrew/actions/git-user-config@master
+        uses: Homebrew/actions/git-user-config@266845213695c3047d210b2e8fbc42ecdaf45802  # master
 
       - name: Pull bottles
         id: pr-pull
@@ -43,7 +43,7 @@ jobs:
         run: brew pr-upload --debug
 
       - name: Push commits
-        uses: Homebrew/actions/git-try-push@master
+        uses: Homebrew/actions/git-try-push@266845213695c3047d210b2e8fbc42ecdaf45802  # master
         with:
           token: ${{ github.token }}
           branch: main
