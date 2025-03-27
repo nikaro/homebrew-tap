@@ -12,10 +12,11 @@ class LspAi < Formula
   depends_on "llama.cpp"
 
   def install
-    gpu = on_arch_conditional arm: "metal", intel: "cuda"
+    features = ["llama_cpp"]
+    features << "metal" if OS.mac? && Hardware::CPU.arm?
+
     system "cargo", "install",
-      "--features", "llama_cpp",
-      "--features", gpu,
+      "--features", features.join(","),
       *std_cargo_args(path: "crates/lsp-ai")
   end
 
