@@ -38,7 +38,7 @@ repos:
         language: system
         types: [ruby]
         entry: brew rubocop --autocorrect
-      - id: brew-rubocop-autocorrect
+      - id: brew-rubocop-lint
         name: Lint Formula and Casks
         language: system
         types: [ruby]
