@@ -8,6 +8,12 @@ class LspAi < Formula
   license "MIT"
   head "https://github.com/SilasMarvin/lsp-ai.git", branch: "main"
 
+  bottle do
+    root_url "https://github.com/nikaro/homebrew-tap/releases/download/lsp-ai-0.7.1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma: "1842fe92fc9cd6ff38e9f4958766c819e67390b92ee7e0ff6d1ea038f4322836"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "c778d0d6eb1e3e8657921737539a29bc6269a04968f1077800b2460f3bc71fb2"
+  end
+
   depends_on "rust" => :build
   depends_on "llama.cpp"
 
