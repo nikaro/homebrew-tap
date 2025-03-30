@@ -1,0 +1,66 @@
+name: Autoupdate Formulas
+
+on:
+  schedule:
+    # Run every day at 05:00 UTC
+    - cron: '0 5 * * *'
+  workflow_dispatch:
+    inputs:
+      formula:
+        description: 'Optional formula to update (blank for all)'
+        required: false
+        type: string
+
+jobs:
+  autoupdate:
+    runs-on: macos-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - name: Set up Homebrew
+        uses: Homebrew/actions/setup-homebrew@266845213695c3047d210b2e8fbc42ecdaf45802  # master
+
+      - name: Configure Git
+        uses: Homebrew/actions/git-user-config@266845213695c3047d210b2e8fbc42ecdaf45802  # master
+
+      - name: Run brew livecheck and bump formulas
+        run: |
+          # Set up GitHub token for opening PRs
+          echo "HOMEBREW_GITHUB_API_TOKEN=${{ secrets.HOMEBREW_GITHUB_API_TOKEN }}" >> "$GITHUB_ENV"
+
+          # Find formulas to check
+          brew tap nikaro/tap
+          cd "$(brew --repository)/Library/Taps/nikaro/homebrew-tap" || exit
+          if [[ -n "${{ github.event.inputs.formula }}" ]]; then
+            # Convert space-separated list to array
+            IFS=' ' read -r -a FORMULAS <<< "${{ github.event.inputs.formula }}"
+          else
+            mapfile -t FORMULAS < <(find Formula -name "*.rb" -exec basename {} .rb \;)
+          fi
+
+          for formula in "${FORMULAS[@]}"; do
+            echo "Checking $formula..."
+
+            # Run livecheck to check for updates
+            UPDATE_INFO=$(brew livecheck --tap=nikaro/tap "$formula" --json)
+
+            # Check if formula has an update available
+            if echo "$UPDATE_INFO" | grep -q '"version": {'; then
+              CURRENT_VERSION=$(echo "$UPDATE_INFO" | jq -r ".[0].version.current")
+              LATEST_VERSION=$(echo "$UPDATE_INFO" | jq -r ".[0].version.latest")
+
+              if [[ "$CURRENT_VERSION" != "$LATEST_VERSION" ]]; then
+                echo "Update available for $formula: $CURRENT_VERSION -> $LATEST_VERSION"
+
+                # Try to bump formula
+                brew bump-formula-pr --no-browse --version="$LATEST_VERSION" --force "$formula" || true
+              else
+                echo "$formula is already up to date."
+              fi
+            fi
+          done
+        env:
+          HOMEBREW_NO_ENV_HINTS: 1
+          HOMEBREW_NO_AUTO_UPDATE: 1
+          HOMEBREW_NO_INSTALL_CLEANUP: 1
