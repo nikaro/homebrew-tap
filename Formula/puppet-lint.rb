@@ -8,6 +8,12 @@ class PuppetLint < Formula
   license "MIT"
   head "https://github.com/puppetlabs/puppet-lint.git", branch: "main"
 
+  bottle do
+    root_url "https://github.com/nikaro/homebrew-tap/releases/download/puppet-lint-4.3.0"
+    sha256 cellar: :any,                 arm64_sonoma: "4d3003b73e5a758b71adfb4768b2807219f4b639fdbed886ea05447f75bf0fb1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "862ffab2b424ff13b2766d16b1a1794939a3d3e50d2a83482ae8011732544342"
+  end
+
   depends_on "ruby"
 
   def install
