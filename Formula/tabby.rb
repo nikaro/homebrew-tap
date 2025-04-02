@@ -9,6 +9,12 @@ class Tabby < Formula
   revision 1
   head "https://github.com/TabbyML/tabby.git", branch: "main"
 
+  livecheck do
+    url :stable
+    regex(/^v(\d+(?:\.\d+)+)$/i)
+    strategy :github_latest
+  end
+
   bottle do
     root_url "https://github.com/nikaro/homebrew-tap/releases/download/tabby-0.26.0_1"
     sha256 cellar: :any,                 arm64_sonoma: "89115410e143f46d83b3bad14cff4c4804c48d36265923c23d10ed4e079d071a"
