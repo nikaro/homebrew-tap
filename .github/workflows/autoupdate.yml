@@ -1,4 +1,4 @@
-name: Autoupdate Formulas
+name: Autoupdate
 
 on:
   schedule:
@@ -13,6 +13,7 @@ on:
 
 jobs:
   autoupdate:
+    name: Autoupdate
     runs-on: macos-latest
     permissions:
       contents: write
@@ -52,7 +53,7 @@ jobs:
             echo "Checking $formula..."
 
             # Run livecheck to check for updates
-            UPDATE_INFO=$(brew livecheck "./Formula/$formula.rb" --json)
+            UPDATE_INFO=$(brew livecheck "nikaro/tap/$formula" --json)
 
             # Check if formula has an update available
             if echo "$UPDATE_INFO" | grep -q '"version": {'; then
