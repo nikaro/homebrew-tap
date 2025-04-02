@@ -121,6 +121,6 @@ jobs:
 
       - name: Add merge label
         env:
-          GH_TOKEN: ${{ github.token }}
+          GH_TOKEN: ${{ secrets.HOMEBREW_GITHUB_API_TOKEN }}
           PULL_REQUEST: ${{ github.event.pull_request.number }}
         run: gh pr edit "$PULL_REQUEST" --add-label "merge"
