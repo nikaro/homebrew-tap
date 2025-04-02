@@ -6,7 +6,8 @@ on:
       - labeled
 
 jobs:
-  pr-pull:
+  merge:
+    name: Merge
     if: contains(github.event.pull_request.labels.*.name, 'merge')
     runs-on: ubuntu-latest
     permissions:
@@ -34,7 +35,15 @@ jobs:
 
       - name: Pull bottles
         id: pr-pull
-        run: brew pr-pull --debug --retain-bottle-dir --no-upload --tap="$GITHUB_REPOSITORY" "$PULL_REQUEST"
+        run: |-
+          brew pr-pull \
+            --debug \
+            --retain-bottle-dir \
+            --no-upload \
+            --no-cherry-pick \
+            --workflows="ci.yml" \
+            --tap="$GITHUB_REPOSITORY" \
+            "$PULL_REQUEST"
 
       - name: Upload bottles to GitHub Packages
         working-directory: ${{ steps.pr-pull.outputs.bottle_path }}
@@ -46,10 +55,10 @@ jobs:
         uses: Homebrew/actions/git-try-push@266845213695c3047d210b2e8fbc42ecdaf45802  # master
         with:
           token: ${{ github.token }}
-          branch: main
+          branch: ${{ github.event.pull_request.head.ref }}
 
-      - name: Delete branch
+      - name: Merge branch
         if: github.event.pull_request.head.repo.fork == false
         env:
           BRANCH: ${{ github.event.pull_request.head.ref }}
-        run: git push --delete origin "$BRANCH"
+        run: gh pr merge "$BRANCH"
