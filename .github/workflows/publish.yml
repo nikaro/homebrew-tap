@@ -54,10 +54,10 @@ jobs:
         uses: Homebrew/actions/git-try-push@266845213695c3047d210b2e8fbc42ecdaf45802  # master
         with:
           token: ${{ github.token }}
-          branch: ${{ github.event.pull_request.head.ref }}
+          branch: main
 
-      - name: Merge branch
+      - name: Delete branch
         if: github.event.pull_request.head.repo.fork == false
         env:
           BRANCH: ${{ github.event.pull_request.head.ref }}
-        run: gh pr merge "$BRANCH"
+        run: git push --delete origin "$BRANCH"
