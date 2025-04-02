@@ -42,7 +42,7 @@ jobs:
           else
             # Get formulas
             FORMULAS=()
-            for file in Formula/*.rb; do
+            for file in ./Formula/*.rb; do
               formula=$(basename "$file" .rb)
               FORMULAS+=("$formula")
             done
@@ -52,7 +52,7 @@ jobs:
             echo "Checking $formula..."
 
             # Run livecheck to check for updates
-            UPDATE_INFO=$(brew livecheck --tap=nikaro/tap "$formula" --json)
+            UPDATE_INFO=$(brew livecheck "./Formula/$formula.rb" --json)
 
             # Check if formula has an update available
             if echo "$UPDATE_INFO" | grep -q '"version": {'; then
