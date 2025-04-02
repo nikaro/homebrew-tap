@@ -40,7 +40,6 @@ jobs:
             --debug \
             --retain-bottle-dir \
             --no-upload \
-            --no-cherry-pick \
             --workflows="ci.yml" \
             --tap="$GITHUB_REPOSITORY" \
             "$PULL_REQUEST"
