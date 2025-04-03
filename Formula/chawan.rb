@@ -8,6 +8,12 @@ class Chawan < Formula
   license "Unlicense"
   head "https://git.sr.ht/~bptato/chawan", branch: "master"
 
+  bottle do
+    root_url "https://github.com/nikaro/homebrew-tap/releases/download/chawan-002958685"
+    sha256 cellar: :any,                 arm64_sonoma: "72d225d4a25132f45ae6ad46fed7203ac920630b7b668a6db8cb3461d8789a0c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "83c9f8849a7f39561c971a376db2630fc9bd179c171c7dd396334a076abda461"
+  end
+
   depends_on "nim" => :build
   depends_on "pkgconf" => :build
   depends_on "libssh2"
