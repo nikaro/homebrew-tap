@@ -5,8 +5,8 @@ require "language/node"
 class ClaudeCode < Formula
   desc "Agentic coding tool that lives in your terminal"
   homepage "https://github.com/anthropics/claude-code"
-  url "https://registry.npmjs.org/@anthropic-ai/claude-code/-/claude-code-0.2.68.tgz"
-  sha256 "965fc80d08a129ca634e7a723868001d93f37c87780b650fb6de0f86e6636e59"
+  url "https://registry.npmjs.org/@anthropic-ai/claude-code/-/claude-code-0.2.69.tgz"
+  sha256 "6d08ca85367322da2b31752caa93e0ac71c10664ed1c8a5cbff6cd254ea4a020"
   license :cannot_represent
 
   bottle do
