@@ -3,8 +3,8 @@
 class Tabby < Formula
   desc "Self-hosted AI coding assistant"
   homepage "https://www.tabbyml.com/"
-  url "https://github.com/TabbyML/tabby/archive/refs/tags/v0.27.0.tar.gz"
-  sha256 "25de1fc6e80eecfe13d60283b343fe7f7fcf1a170245b6c679800fdefa572894"
+  url "https://github.com/TabbyML/tabby/archive/refs/tags/v0.27.1.tar.gz"
+  sha256 "b8c6eef2b70a0848ffa657330be2d7dd03a8197b03040cc8ceaff7d94526896c"
   license "Apache-2.0"
   head "https://github.com/TabbyML/tabby.git", branch: "main"
 
