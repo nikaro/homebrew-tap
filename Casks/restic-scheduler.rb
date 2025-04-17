@@ -7,6 +7,8 @@ cask "restic-scheduler" do
   desc "Menu bar app to perform scheduled backups using restic"
   homepage "https://github.com/sergeymakinen/ResticScheduler"
 
+  depends_on arch: :arm64
+
   app "Restic Scheduler.app"
 
   zap trash: [
