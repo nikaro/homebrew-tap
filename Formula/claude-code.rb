@@ -10,9 +10,9 @@ class ClaudeCode < Formula
   license :cannot_represent
 
   bottle do
-    root_url "https://github.com/nikaro/homebrew-tap/releases/download/claude-code-0.2.79"
-    sha256 cellar: :any,                 arm64_sonoma: "ebd7cfd8e9128d2a7b0fd0c75686c4f8542f769d3c471c06256c9e8e9f52007d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "b74a718f5937f2ecbd03acefc116595ca710a55b0524834b16998d603a9b5dd6"
+    root_url "https://github.com/nikaro/homebrew-tap/releases/download/claude-code-0.2.81"
+    sha256 cellar: :any,                 arm64_sonoma: "e6879fd61c050173fc56bcf1c1b09363862df6e4ad7b6cf721b117a67655e9c4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "5eaf10f5457cf3de54a80cb19f9a83147903eed2a6354dde5828552eb8c1fe8d"
   end
 
   depends_on "node"
