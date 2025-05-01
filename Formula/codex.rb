@@ -5,8 +5,8 @@ require "language/node"
 class Codex < Formula
   desc "Lightweight coding agent that runs in your terminal"
   homepage "https://github.com/openai/codex"
-  url "https://registry.npmjs.org/@openai/codex/-/codex-0.1.2504251709.tgz"
-  sha256 "22a9292515f05374bcd6386ff08022b99c5b7c0134ba6393663b51e9204ecace"
+  url "https://registry.npmjs.org/@openai/codex/-/codex-0.1.2504301751.tgz"
+  sha256 "534efae4ced56e98b136a13bee4523acebf261267fecc11ea3df9a2854875186"
   license "Apache-2.0"
 
   bottle do
