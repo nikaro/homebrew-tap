@@ -10,9 +10,9 @@ class Codex < Formula
   license "Apache-2.0"
 
   bottle do
-    root_url "https://github.com/nikaro/homebrew-tap/releases/download/codex-0.1.2504301751"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma: "e434e61b8eefad6abf48fa0c2aadaa7ead7bab93feabfd9b2af5b3dd22a00ed1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "9e38cd1efcf028ca89e9db842ed1082e041a7e6025ae71aa9dd2e00010dec897"
+    root_url "https://github.com/nikaro/homebrew-tap/releases/download/codex-0.1.2505021246"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma: "7704ca915a19f5f44caeed9356c07c900bf455a9dca9f1290b8827183d1784a6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "2ce21fa63a4b555c55a2d8a3338feb14db2e069bd29f21f8d818dba0354c5bba"
   end
 
   depends_on "node"
