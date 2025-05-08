@@ -5,8 +5,8 @@ class JediLanguageServer < Formula
 
   desc "Language server for Jedi"
   homepage "https://github.com/pappasam/jedi-language-server"
-  url "https://files.pythonhosted.org/packages/6a/38/11387647334652a1c9af65390ed4719d64ce21308451873749dad8faef1f/jedi_language_server-0.43.1.tar.gz"
-  sha256 "c693a2b62ac053b1b2b0a14efaf963c2b9f800e02083cc82ccd5c275cd29d7b1"
+  url "https://files.pythonhosted.org/packages/fb/0d/31993f5d9c15b9c68df6602f43e8871b76ff5a0edb376256c548ede427a5/jedi_language_server-0.45.1.tar.gz"
+  sha256 "8c0c6b4eaeffdbb87be79e9897c9929ffeddf875dff7c1c36dd67768e294942b"
   license "MIT"
 
   bottle do
@@ -18,18 +18,23 @@ class JediLanguageServer < Formula
   depends_on "python"
 
   resource "attrs" do
-    url "https://files.pythonhosted.org/packages/48/c8/6260f8ccc11f0917360fc0da435c5c9c7504e3db174d5a12a1494887b045/attrs-24.3.0.tar.gz"
-    sha256 "8f5c07333d543103541ba7be0e2ce16eeee8130cb0b3f9238ab904ce1e85baff"
+    url "https://files.pythonhosted.org/packages/5a/b0/1367933a8532ee6ff8d63537de4f1177af4bff9f3e829baf7331f595bb24/attrs-25.3.0.tar.gz"
+    sha256 "75d7cefc7fb576747b2c81b4442d4d4a1ce0900973527c011d1030fd3bf4af1b"
   end
 
   resource "cattrs" do
-    url "https://files.pythonhosted.org/packages/64/65/af6d57da2cb32c076319b7489ae0958f746949d407109e3ccf4d115f147c/cattrs-24.1.2.tar.gz"
-    sha256 "8028cfe1ff5382df59dd36474a86e02d817b06eaf8af84555441bac915d2ef85"
+    url "https://files.pythonhosted.org/packages/29/7b/da4aa2f95afb2f28010453d03d6eedf018f9e085bd001f039e15731aba89/cattrs-24.1.3.tar.gz"
+    sha256 "981a6ef05875b5bb0c7fb68885546186d306f10f0f6718fe9b96c226e68821ff"
   end
 
   resource "docstring-to-markdown" do
-    url "https://files.pythonhosted.org/packages/7a/ad/6a66abd14676619bd56f6b924c96321a2e2d7d86558841d94a30023eec53/docstring-to-markdown-0.15.tar.gz"
-    sha256 "e146114d9c50c181b1d25505054a8d0f7a476837f0da2c19f07e06eaed52b73d"
+    url "https://files.pythonhosted.org/packages/58/1f/16e6d4026e94224d662dcd344dcd3563bc8a74a272f2c27b325793cad5fc/docstring_to_markdown-0.16.tar.gz"
+    sha256 "097bf502fdf040b0d019688a7cc1abb89b98196801448721740e8aa3e5075627"
+  end
+
+  resource "importlib-metadata" do
+    url "https://files.pythonhosted.org/packages/76/66/650a33bd90f786193e4de4b3ad86ea60b53c89b669a5c7be931fac31cdb0/importlib_metadata-8.7.0.tar.gz"
+    sha256 "d13b81ad223b890aa16c5471f2ac3056cf76c5f10f82d6f9292f0b415f389000"
   end
 
   resource "jedi" do
@@ -52,7 +57,18 @@ class JediLanguageServer < Formula
     sha256 "140edceefa0da0e9b3c533547c892a42a7d2fd9217ae848c330c53d266a55018"
   end
 
+  resource "typing-extensions" do
+    url "https://files.pythonhosted.org/packages/f6/37/23083fcd6e35492953e8d2aaaa68b860eb422b34627b13f2ce3eb6106061/typing_extensions-4.13.2.tar.gz"
+    sha256 "e6c81219bd689f51865d9e372991c540bda33a0379d5573cddb9a3a23f7caaef"
+  end
+
+  resource "zipp" do
+    url "https://files.pythonhosted.org/packages/3f/50/bad581df71744867e9468ebd0bcd6505de3b275e06f202c2cb016e3ff56f/zipp-3.21.0.tar.gz"
+    sha256 "2c9958f6430a2040341a52eb608ed6dd93ef4392e02ffe219417c1b28b5dd1f4"
+  end
+
   def install
+    ENV["PIP_USE_PEP517"] = "1"
     virtualenv_install_with_resources
   end
 
