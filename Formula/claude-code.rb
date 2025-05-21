@@ -9,12 +9,6 @@ class ClaudeCode < Formula
   sha256 "86bece517d3683164e9e4c704efb519e425bc05e0e2d3369cccd06e82d9bf5b9"
   license :cannot_represent
 
-  bottle do
-    root_url "https://github.com/nikaro/homebrew-tap/releases/download/claude-code-0.2.100"
-    sha256 cellar: :any,                 arm64_sonoma: "9aea864d236f77d4e055d283c6d25790f293fba4946e787c8d6d6852832993f2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "65eceb2eb8abbfdbf593a34bd9c5f1b113ca8b432e2df6cadd5e0338ae3f7b34"
-  end
-
   depends_on "node"
   depends_on "pcre2"
   depends_on "ripgrep"
