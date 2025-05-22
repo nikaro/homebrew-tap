@@ -15,9 +15,9 @@ class Tabby < Formula
   end
 
   bottle do
-    root_url "https://github.com/nikaro/homebrew-tap/releases/download/tabby-0.28.0"
-    sha256 cellar: :any,                 arm64_sonoma: "388a1179b0166fe85c3008efd26c42094db8634ea1f4031f3a763b5ec861a695"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "de9db6eb8041ae6db88cc3f6ca4ed746f8c3e5dcb7e072763b089924caaeba17"
+    root_url "https://github.com/nikaro/homebrew-tap/releases/download/tabby-0.29.0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma: "60bfb31d85055e3b72bec747f307c523f746b0983815b1c8951516b6264a3600"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "0b0eafc064fa4820f51f4f66bd1cbb4405230621bb9cbe393a6a1bd8c25e1a68"
   end
 
   depends_on "llvm" => :build
