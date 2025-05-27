@@ -88,7 +88,7 @@ jobs:
 
       - name: Run the formulae steps
         if: steps.changed-formulae.outputs.any_changed == 'true' && github.event_name == 'pull_request'
-        run: brew test-bot --only-formulae --skip-relocation
+        run: brew test-bot --only-formulae
 
       - name: Upload bottles as artifact
         if: always() && steps.changed-formulae.outputs.any_changed == 'true' && github.event_name == 'pull_request'
