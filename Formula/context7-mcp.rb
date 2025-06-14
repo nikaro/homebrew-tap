@@ -10,9 +10,9 @@ class Context7Mcp < Formula
   license "MIT"
 
   bottle do
-    root_url "https://github.com/nikaro/homebrew-tap/releases/download/context7-mcp-1.0.13"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma: "e13ef1a662a97cf7fd89f020be3a0e8e99c54dfd94a9bcbb1af365e5e661cbc7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "1978a30838436b3e9de6ff9eb1c8d39c7856d5a589ae737553fcecbd339ce1fa"
+    root_url "https://github.com/nikaro/homebrew-tap/releases/download/context7-mcp-1.0.14"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma: "0faeb17bca2a2fce8991a23c578520012a2c115e07cb9eb20a0ea5b71b270b83"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "d7854941ed43fcfd15e7019d20d009d3a3312d7859292387cbc5965493caed14"
   end
 
   depends_on "node"
