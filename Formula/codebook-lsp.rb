@@ -8,6 +8,12 @@ class CodebookLsp < Formula
   license "MIT"
   head "https://github.com/blopker/codebook.git", branch: "main"
 
+  bottle do
+    root_url "https://github.com/nikaro/homebrew-tap/releases/download/codebook-lsp-0.3.5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma: "fa86455a315dd03a9f83a0c2c1cffeb833d4992152e3865b2cd587adb4bb4bfc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "52f97d33b492695ec240ccc1fc75472875dc86a5088bacea5a08398097f2d79f"
+  end
+
   depends_on "rust" => :build
 
   def install
