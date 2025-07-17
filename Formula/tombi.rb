@@ -8,6 +8,12 @@ class Tombi < Formula
   license "MIT"
   head "https://github.com/tombi-toml/tombi.git", branch: "main"
 
+  bottle do
+    root_url "https://github.com/nikaro/homebrew-tap/releases/download/tombi-0.4.33"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma: "a58d20a3cc65cf983c9b074ebbe2fdd117598609fc80cda6409dbde422b260e6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "aa3892ef5f92d507b3dad0b839d6ece09524517a1d5b11640dbb0714c657e931"
+  end
+
   depends_on "rust" => :build
 
   def install
