@@ -9,9 +9,9 @@ class Tombi < Formula
   head "https://github.com/tombi-toml/tombi.git", branch: "main"
 
   bottle do
-    root_url "https://github.com/nikaro/homebrew-tap/releases/download/tombi-0.4.33"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma: "a58d20a3cc65cf983c9b074ebbe2fdd117598609fc80cda6409dbde422b260e6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "aa3892ef5f92d507b3dad0b839d6ece09524517a1d5b11640dbb0714c657e931"
+    root_url "https://github.com/nikaro/homebrew-tap/releases/download/tombi-0.4.34"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma: "e992d517d93599cff5bf2c668366e7f396bd3c8f942d64c02dd239e3e4a68dc1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "7126d5db84b58ef9480cb1f90464e3f18412bebc3b85b1f020fbd0a5d0c1aba6"
   end
 
   depends_on "rust" => :build
