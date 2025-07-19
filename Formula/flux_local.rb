@@ -7,6 +7,12 @@ class FluxLocal < Formula
   sha256 "3c77f2b836271d0d1e5de053259986b1b75138392636de3ef6c77f7de0fe5bd4"
   license "Apache-2.0"
 
+  bottle do
+    root_url "https://github.com/nikaro/homebrew-tap/releases/download/flux_local-7.5.6"
+    sha256 cellar: :any,                 arm64_sonoma: "84d06e7e4635bcba1ca798bd9860059e5cd001087cfe385eb8a2e680221c5143"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "7a1a8e7525b05903c0c9e910226053b66c88af2ff80fc413075139e2a1ec27f4"
+  end
+
   depends_on "rust" => :build
   depends_on "libyaml"
   depends_on "python@3.13"
