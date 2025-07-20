@@ -9,9 +9,9 @@ class FluxLocal < Formula
   revision 1
 
   bottle do
-    root_url "https://github.com/nikaro/homebrew-tap/releases/download/flux_local-7.5.6"
-    sha256 cellar: :any,                 arm64_sonoma: "84d06e7e4635bcba1ca798bd9860059e5cd001087cfe385eb8a2e680221c5143"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "7a1a8e7525b05903c0c9e910226053b66c88af2ff80fc413075139e2a1ec27f4"
+    root_url "https://github.com/nikaro/homebrew-tap/releases/download/flux-local-7.5.6_1"
+    sha256 cellar: :any,                 arm64_sonoma: "a7541c887814a1a3f8ad05b6627f9ea3ccfded2986f2802798a669b68413104d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "ff469f05e2c8fce645b9731e7070622700e69f3f8595f2d276f7c442209a3f9a"
   end
 
   depends_on "rust" => :build
