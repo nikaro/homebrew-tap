@@ -7,9 +7,9 @@ class Kat < Formula
   revision 1
 
   bottle do
-    root_url "https://github.com/nikaro/homebrew-tap/releases/download/kat-0.21.0"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma: "f71cdfb0f35c044b0e5b5ae0737c1abc08df5cc864b0feb931191fcf7b664af6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "fa0cbc6335535d6f64b14b91b1523015fc764bd36e04b5a12efa7cd9d1655663"
+    root_url "https://github.com/nikaro/homebrew-tap/releases/download/kat-0.21.0_1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma: "79379be50d2c95b5586fe27a9650a61a42ef21a687c0fc02d55b172e4402404a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "16518701b2d16fbf9b89a6381b9ca4ff66132e39e29282865dd5493ce5f770bb"
   end
 
   depends_on "go" => :build
