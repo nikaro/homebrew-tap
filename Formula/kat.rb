@@ -5,6 +5,12 @@ class Kat < Formula
   sha256 "b1c3e78bbb674fe24ac1bca9c935d9da099acde119d863a7582b315295ef3d60"
   license "Apache-2.0"
 
+  bottle do
+    root_url "https://github.com/nikaro/homebrew-tap/releases/download/kat-0.21.0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma: "f71cdfb0f35c044b0e5b5ae0737c1abc08df5cc864b0feb931191fcf7b664af6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "fa0cbc6335535d6f64b14b91b1523015fc764bd36e04b5a12efa7cd9d1655663"
+  end
+
   depends_on "go" => :build
   depends_on "helm"
   depends_on "kustomize"
