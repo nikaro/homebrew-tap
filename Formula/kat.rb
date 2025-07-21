@@ -4,6 +4,7 @@ class Kat < Formula
   url "https://github.com/MacroPower/kat/archive/refs/tags/v0.21.0.tar.gz"
   sha256 "b1c3e78bbb674fe24ac1bca9c935d9da099acde119d863a7582b315295ef3d60"
   license "Apache-2.0"
+  revision 1
 
   bottle do
     root_url "https://github.com/nikaro/homebrew-tap/releases/download/kat-0.21.0"
@@ -17,11 +18,9 @@ class Kat < Formula
   depends_on "yq"
 
   def install
-    ldflags = %W[
-      -s -w
-      -X github.com/macropower/kat/pkg/version.Version=#{version}
-    ]
+    ldflags = %W[-s -w -X github.com/macropower/kat/pkg/version.Version=#{version}]
     system "go", "build", *std_go_args(ldflags:), "./cmd/kat"
+    generate_completions_from_executable(bin/"kat", "completion")
   end
 
   test do
