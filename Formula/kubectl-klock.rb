@@ -8,9 +8,9 @@ class KubectlKlock < Formula
   license "GPL-3.0-only"
 
   bottle do
-    root_url "https://github.com/nikaro/homebrew-tap/releases/download/kubectl-klock-0.8.1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma: "4caedd848a2e08dcc57a60c3002c455f4d35cc7d568a00dda627f9a6bd204614"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "8835363657f085a23dee7a6584b13d9936cc0e94320fcad4d4c94dc51e8cca64"
+    root_url "https://github.com/nikaro/homebrew-tap/releases/download/kubectl-klock-0.8.2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma: "b32d01011f67ca09600935fcc27462cd314f9d844b835fb1034b5eb25c61ab9c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "9416aa20672b30a9aef4c37163c0863d90a47b858cd62763ae4d32a72831182c"
   end
 
   depends_on "go" => :build
