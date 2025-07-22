@@ -3,8 +3,8 @@
 class KubectlKlock < Formula
   desc "Kubectl plugin to render watch output in a more readable fashion"
   homepage "https://github.com/applejag/kubectl-klock"
-  url "https://github.com/applejag/kubectl-klock/archive/refs/tags/v0.8.1.tar.gz"
-  sha256 "54c142f9647982483f0c8c5fea39128a3165ee993ccc47ed474a8e754c286e33"
+  url "https://github.com/applejag/kubectl-klock/archive/refs/tags/v0.8.2.tar.gz"
+  sha256 "0b3b389c7a9a84753626cf0d05cafb893674555b6efe777d2c94911613e53d69"
   license "GPL-3.0-only"
 
   bottle do
