@@ -3,10 +3,9 @@ class FluxLocal < Formula
 
   desc "Tools and libraries for managing a local flux gitops repository"
   homepage "https://allenporter.github.io/flux-local/"
-  url "https://files.pythonhosted.org/packages/4c/48/7427414329814fa4cac30b447320e7149f81dd6bd3dca391e9ec79cceb91/flux_local-7.5.6.tar.gz"
-  sha256 "3c77f2b836271d0d1e5de053259986b1b75138392636de3ef6c77f7de0fe5bd4"
+  url "https://files.pythonhosted.org/packages/1c/a2/bb9b4672b4ff9097f0d36a0393c21d15c3c69f646eb06c74955c1efa821c/flux_local-7.6.0.tar.gz"
+  sha256 "985b545146bb6a5002122ae6e23bcbf3c43bfd31692c946cf46a748a9bd24acf"
   license "Apache-2.0"
-  revision 1
 
   bottle do
     root_url "https://github.com/nikaro/homebrew-tap/releases/download/flux-local-7.5.6_1"
