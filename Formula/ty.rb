@@ -7,6 +7,12 @@ class Ty < Formula
   sha256 "b601eb50e981bd3fb857eb17b473cad3728dab67f53370b6790dfc342797eb20"
   license "MIT"
 
+  bottle do
+    root_url "https://github.com/nikaro/homebrew-tap/releases/download/ty-0.0.1a15"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma: "9e8c2ab1d75746383c6af10591268187269f86712c25dd46ef7378b3c26aace5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "c1acce9e55bed3298100a6caaaba5b693fe2b9ade5dee7a3a8ad191e5c1b3cd0"
+  end
+
   depends_on "rust" => :build
   depends_on "python@3.13"
 
