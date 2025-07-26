@@ -8,9 +8,9 @@ class Ty < Formula
   license "MIT"
 
   bottle do
-    root_url "https://github.com/nikaro/homebrew-tap/releases/download/ty-0.0.1a15"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma: "9e8c2ab1d75746383c6af10591268187269f86712c25dd46ef7378b3c26aace5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "c1acce9e55bed3298100a6caaaba5b693fe2b9ade5dee7a3a8ad191e5c1b3cd0"
+    root_url "https://github.com/nikaro/homebrew-tap/releases/download/ty-0.0.1a16"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma: "7e746591911cfb48c25139b36346267f1a4051964707c8747393a4365c36187e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "b9a66974eaa7db123a2b7dfbf9a95796d30151a5cd6bad434095e26e804973a3"
   end
 
   depends_on "rust" => :build
