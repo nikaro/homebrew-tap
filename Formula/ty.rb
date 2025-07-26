@@ -3,8 +3,8 @@ class Ty < Formula
 
   desc "Extremely fast Python type checker and language server"
   homepage "https://docs.astral.sh/ty/"
-  url "https://files.pythonhosted.org/packages/28/ba/abedc672a4d706241106923595d68573e995f85aced13aa3ef2e6d5069cf/ty-0.0.1a15.tar.gz"
-  sha256 "b601eb50e981bd3fb857eb17b473cad3728dab67f53370b6790dfc342797eb20"
+  url "https://files.pythonhosted.org/packages/ca/62/f021cdbdda9dbd553be4b841c2e9329ecd3ddc630a17c1ab5179832fbca8/ty-0.0.1a16.tar.gz"
+  sha256 "9ade26904870dc9bd988e58bad4382857f75ae05edb682ee0ba2f26fcc2d4c0f"
   license "MIT"
 
   bottle do
