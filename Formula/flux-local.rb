@@ -3,8 +3,8 @@ class FluxLocal < Formula
 
   desc "Tools and libraries for managing a local flux gitops repository"
   homepage "https://allenporter.github.io/flux-local/"
-  url "https://files.pythonhosted.org/packages/1c/a2/bb9b4672b4ff9097f0d36a0393c21d15c3c69f646eb06c74955c1efa821c/flux_local-7.6.0.tar.gz"
-  sha256 "985b545146bb6a5002122ae6e23bcbf3c43bfd31692c946cf46a748a9bd24acf"
+  url "https://files.pythonhosted.org/packages/8c/28/728abcafad494d50469a7839913383db05bb8d5c010fda53d2fa0f8295c7/flux_local-7.7.0.tar.gz"
+  sha256 "22a96b24736c4e30ed9a68cc92dc46c638661ae9c9497252b40e2ca10dc87d43"
   license "Apache-2.0"
 
   bottle do
@@ -43,8 +43,8 @@ class FluxLocal < Formula
   end
 
   resource "gitpython" do
-    url "https://files.pythonhosted.org/packages/c0/89/37df0b71473153574a5cdef8f242de422a0f5d26d7a9e231e6f169b4ad14/gitpython-3.1.44.tar.gz"
-    sha256 "c87e30b26253bf5418b01b0660f818967f3c503193838337fe5e573331249269"
+    url "https://files.pythonhosted.org/packages/9a/c8/dd58967d119baab745caec2f9d853297cec1989ec1d63f677d3880632b88/gitpython-3.1.45.tar.gz"
+    sha256 "85b0ee964ceddf211c41b9f27a49086010a190fd8132a24e21f362a4b36a791c"
   end
 
   resource "idna" do
